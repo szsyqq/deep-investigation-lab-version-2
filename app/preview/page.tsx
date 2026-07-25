@@ -16,7 +16,7 @@ export default function PreviewIndex() {
       </section>
       <section className="preview-list">
         <div className="preview-list-head"><h2>当前试读</h2><span>1 篇</span></div>
-        <Link className="preview-card" href="/reports/airbus">
+        <Link className="preview-card" href="/preview/airbus-example">
           <div className="preview-status"><b>内部预览</b><span>等待分析师确认</span></div>
           <div>
             <span className="preview-tag">主体研究 · 航空制造 · 示例数据</span>

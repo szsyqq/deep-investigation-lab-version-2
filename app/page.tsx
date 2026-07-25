@@ -1,31 +1,5 @@
 import Link from "next/link";
-
-const archiveReports = [
-  {
-    company: "腾讯控股",
-    tag: "互联网 · AI",
-    title: "腾讯：14亿人的围墙花园，与它挡不住的那道裂缝",
-    summary: "微信月活超过十四亿，腾讯仍是中国最赚钱的互联网公司之一。但流量、视频、国际化与人工智能投入之间的张力，正在重新定义它的下一阶段。",
-    time: "约 22 分钟",
-    href: "https://szsyqq.github.io/DeepInvestigationLab/reports/tencent/index.html",
-  },
-  {
-    company: "深度求索",
-    tag: "人工智能 · 开源",
-    title: "DeepSeek：把模型开源，把账本捂紧",
-    summary: "技术彻底打开，财务仍然关闭。模型效率、资本投入、商业化和估值之间，构成了这家公司最锋利的悖论。",
-    time: "约 18 分钟",
-    href: "https://szsyqq.github.io/DeepInvestigationLab/reports/deepseek/index.html",
-  },
-  {
-    company: "空中客车",
-    tag: "航空 · 供应链",
-    title: "空中客车：八千架飞机的赌注——产能马拉松与发动机之困",
-    summary: "创纪录订单簿与交付迟滞同时存在。发动机、供应链、诉讼和竞争格局，共同决定这家飞机制造商能否把需求兑现为现金。",
-    time: "约 25 分钟",
-    href: "https://szsyqq.github.io/DeepInvestigationLab/reports/airbus/index.html",
-  },
-];
+import reports from "../content/published-reports.json";
 
 export default function Home() {
   return (
@@ -67,20 +41,20 @@ export default function Home() {
 
       <section className="news-index">
         <div className="news-index-heading">
-          <div><span>ARCHIVE SELECTION</span><h2>历史档案选读</h2></div>
-          <p>以下文章保留在第一版档案室，作为正式报道风格与内容深度的设计基准。</p>
+          <div><span>PUBLISHED INVESTIGATIONS</span><h2>全部正式报道</h2></div>
+          <p>{reports.length} 篇公开调查已经接入同一套发布系统。首页、文章导航、法律声明和注记统一维护，新增报道不再重复开发页面。</p>
         </div>
         <div className="news-report-list">
-          {archiveReports.map((report, index) => (
-            <a className="news-report-card" href={report.href} key={report.title}>
-              <div className="news-report-number">0{index + 1}</div>
+          {reports.map((report, index) => (
+            <Link className="news-report-card" href={report.href} key={report.slug}>
+              <div className="news-report-number">{String(index + 1).padStart(2, "0")}</div>
               <div className="news-report-copy">
-                <div className="news-report-meta"><b>{report.company}</b><span>{report.tag}</span></div>
+                <div className="news-report-meta"><b>{report.co}</b><span>{report.tags.join(" · ")}</span>{report.trial && <i>试读标记</i>}</div>
                 <h3>{report.title}</h3>
-                <p>{report.summary}</p>
-                <div className="news-report-foot"><span>{report.time}阅读</span><b>阅读全文 →</b></div>
+                <p>{report.desc}</p>
+                <div className="news-report-foot"><span>{report.readingTime}</span><b>阅读全文 →</b></div>
               </div>
-            </a>
+            </Link>
           ))}
         </div>
       </section>

@@ -72,6 +72,24 @@ npm run research:approve -- <slug> "分析师确认意见"
 
 每篇报告只拥有自己的 `content/reports/<slug>/` 目录，其中同时保存供分析师阅读的 Markdown 底稿和供程序读取的 JSON 状态。共享页面、样式和组件位于 `app/`，不会为新文章复制。
 
+## 正式报道发布层
+
+正式首页现在收录 21 篇既有报道，并统一通过动态路由 `/reports/<slug>/` 渲染：
+
+```text
+content/published-reports.json      # 正式报道目录与首页元数据
+content/published/<slug>/content.json
+                                      # 每篇文章的正文、章节与兼容样式
+app/reports/[slug]/page.tsx         # 唯一的正式报道路由
+components/report/ArticleChrome.tsx # 统一导航、阅读进度与章节目录
+components/legal/EobLegalNotice.tsx # 全站唯一 EOB 声明
+components/legal/LegalFooter.tsx    # 全部报道共用的注记与法律页脚
+```
+
+EOB 同意状态保存在浏览器同源 `localStorage` 中。读者在首页或任一子页面确认一次后，访问同一网站的其他页面不会再次弹出。声明内容只在共享组件中维护。
+
+新增正式报道时，不创建独立 HTML，也不复制导航、法律声明或页脚。新报告先进入 `content/reports/<slug>/` 研究流程；审核批准后，再由发布步骤生成内容包并登记到正式报道目录。
+
 ## 与 V1 的边界
 
-V1 仓库未被修改。V2 只参考了 V1 的公开结构与经验，不复制其底稿、版本归档或报告文件。
+V1 仓库始终保持只读、未被修改。V2 将其 21 篇公开报道迁移为只含发布内容的兼容数据包，不复制 V1 的开发结构、底稿或版本归档。迁移工具为 `scripts/import-v1-reports.py`，正式页面仍由 V2 的共享应用统一渲染。
