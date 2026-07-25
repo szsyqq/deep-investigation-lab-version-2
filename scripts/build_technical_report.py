@@ -218,7 +218,7 @@ def add_cover(doc):
     title.add_run("Deep Investigation Lab V2")
 
     subtitle = doc.add_paragraph(style="Subtitle")
-    subtitle.add_run("从开放式问题到可核查调查报告的\n系统原理、生产流程与工程治理")
+    subtitle.add_run("从调查任务到完整报告的\n七阶段生产流程与内部系统")
     add_bottom_border(subtitle, color=RED, size="20", space="12")
 
     summary = doc.add_paragraph()
@@ -226,14 +226,14 @@ def add_cover(doc):
     summary.paragraph_format.space_after = Pt(12)
     summary.paragraph_format.line_spacing = 1.35
     r = summary.add_run(
-        "面向产品经理、内容产品负责人、研究负责人和协作开发者的系统说明书。"
-        "本报告解释每一项中间产物为什么存在、如何形成、如何通过质量关卡，以及在长期维护中需要保护的边界。"
+        "面向产品经理、分析师、研究负责人和协作开发者的系统说明书。"
+        "本报告用七个清晰阶段解释研究、写作、图表、审核、人工修改、内部试读和正式发布如何连接成一个完整流程。"
     )
     set_run_font(r, size=12, color=INK)
 
     table = doc.add_table(rows=4, cols=2)
     rows = [
-        ("文档版本", "2.0"),
+        ("文档版本", "2.1"),
         ("系统版本", "Deep Investigation Lab V2"),
         ("更新日期", "2026-07-25"),
         ("公开站点", "szsyqq.github.io/deep-investigation-lab-version-2"),
@@ -250,7 +250,7 @@ def add_cover(doc):
 
     p = doc.add_paragraph()
     p.paragraph_format.space_before = Pt(80)
-    r = p.add_run("调查研究不是一次生成，而是一系列可观察、可核查、可回退的产品状态。")
+    r = p.add_run("报告不是一次生成，而是研究、写作、修改和发布共同形成的完整产品。")
     set_run_font(r, size=11, italic=True, color=GOLD)
     p.alignment = WD_ALIGN_PARAGRAPH.CENTER
     doc.add_page_break()
@@ -263,12 +263,12 @@ def add_document_map(doc):
     title = doc.add_paragraph("本报告如何组织", style="Heading 1")
     title.paragraph_format.space_before = Pt(4)
     items = [
-        ("01—03", "定位、问题重构与总体架构"),
-        ("04—05", "研究任务识别与六道质量关卡"),
-        ("06—09", "修改机制、发布工程、日常操作与治理"),
-        ("10—12", "仓库架构、知识更新与模型优化"),
-        ("13—15", "风险处理、后续路线与结论"),
-        ("附录", "研究包职责与常用命令"),
+        ("01", "产品目标与边界"),
+        ("02", "七阶段报告生产流程"),
+        ("03—04", "审核、人工修改与发布"),
+        ("05—06", "内部系统组织与日常操作"),
+        ("07—08", "经验积累与已实现能力"),
+        ("09—10", "后续开发重点与结论"),
     ]
     table = doc.add_table(rows=1, cols=2)
     table.cell(0, 0).text = "章节"
@@ -291,7 +291,7 @@ def add_document_map(doc):
 
     doc.add_paragraph("系统主链路", style="Heading 2")
     flow = doc.add_table(rows=1, cols=5)
-    labels = ["研究请求", "研究包", "编辑判断", "发布合同", "共享网站"]
+    labels = ["调查任务", "反复研究", "完整初稿", "审核修改", "预览发布"]
     fills = [RED, INK, GOLD, INK, RED]
     for idx, label in enumerate(labels):
         cell = flow.cell(0, idx)
@@ -308,7 +308,7 @@ def add_document_map(doc):
     p = cell.paragraphs[0]
     r = p.add_run("核心判断  ")
     set_run_font(r, size=10, bold=True, color=RED)
-    r = p.add_run("V2 的创新不是增加更多提示词，而是让每一次研究与编辑决策形成可检查的中间状态。")
+    r = p.add_run("用户只看七个生产阶段；证据映射、状态文件和自动校验在后台完成。")
     set_run_font(r, size=10.5, color=INK)
     set_table_geometry(callout, [PAGE_WIDTH_DXA])
     doc.add_page_break()
@@ -349,12 +349,11 @@ def parse_source(doc):
     skip_front = True
     paragraph_buffer = []
     break_before = {
-        "3. 系统总体架构",
-        "5. 六道研究关卡的详细流程",
-        "8. 面向产品经理的日常操作流程",
-        "10. GitHub 仓库架构与文件维护",
-        "14. 后续开发路线",
-        "附录 A：研究包文件职责",
+        "3. 审核与人工修改",
+        "4. 内部预览与正式发布",
+        "5. 内部系统怎样组织",
+        "7. 系统如何积累经验",
+        "9. 下一步开发重点",
     }
 
     def flush():

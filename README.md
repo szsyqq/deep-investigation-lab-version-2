@@ -1,6 +1,6 @@
 # Deep Investigation Lab V2
 
-Deep Investigation Lab V2 是一套面向 Codex 的结构化调查研究与发布系统。它把研究、编辑、视觉规划和网页渲染拆开，避免每篇文章重新生成网站，也避免一次修图破坏历史报告。
+Deep Investigation Lab V2 是一套面向 Codex 的完整报告生产系统。它从调查任务开始，经过讨论与反复研究、框架与底稿、文字初稿、视觉编辑、审核与人工修改，最后进入内部试读和正式发布。
 
 - **公开网站**：https://szsyqq.github.io/deep-investigation-lab-version-2/
 - **操作手册**：https://szsyqq.github.io/deep-investigation-lab-version-2/manual/
@@ -22,7 +22,7 @@ Deep Investigation Lab V2 是一套面向 Codex 的结构化调查研究与发�
 - `entity`：公司、机构、人物、产品等主体研究；
 - `topic`：行业、事件、政策、趋势或社会问题研究。
 
-随后按固定流程建立问题树、证据账本、研究主张、视觉计划、编辑状态和发布清单。
+随后按七阶段流程建立讨论记录、研究底稿、证据账本、报告框架、完整初稿、视觉计划、审核记录和发布状态。
 
 ## 本地运行
 
@@ -45,21 +45,30 @@ npm test
 npm run build
 ```
 
+推进报告生产阶段：
+
+```bash
+npm run research:advance -- <slug> --to=drafting
+npm run research:advance -- <slug> --to=internal-preview
+npm run research:approve -- <slug> "分析师确认意见"
+```
+
 ## 架构
 
 ```text
-用户请求
-  → 研究类型识别
-  → 问题树与证据计划
-  → 证据账本
-  → 编辑研讨与反证
-  → 研究主张与章节职责
-  → 视觉计划
-  → 固定网站渲染器
-  → 发布校验
+调查任务
+  → 主体/话题识别
+  → 讨论团与反复研究
+  → 框架、来源与底稿
+  → 完整文字初稿
+  → 图表与视觉编辑
+  → 相似性、事实和结构审核
+  → 分析师反复修改
+  → 内部试读
+  → 正式发布
 ```
 
-每篇报告只拥有自己的 `content/reports/<slug>/` 目录。共享页面、样式和组件位于 `app/`，不会为新文章复制。
+每篇报告只拥有自己的 `content/reports/<slug>/` 目录，其中同时保存供分析师阅读的 Markdown 底稿和供程序读取的 JSON 状态。共享页面、样式和组件位于 `app/`，不会为新文章复制。
 
 ## 与 V1 的边界
 

@@ -1,5 +1,5 @@
 {
-  "schemaVersion": "1.0.0",
+  "schemaVersion": "2.0.0",
   "reportId": "airbus-example",
   "title": "订单堆成山，飞机为何交不出去？",
   "deck": "空客的需求从未如此强劲，但供应瓶颈把订单、交付和现金流拉向了不同方向。",
@@ -7,5 +7,7 @@
     {"id": "contradiction", "title": "增长没有变成结果", "sectionPurpose": "解释订单、交付和现金流的背离", "claimIds": ["C1"], "visualIds": ["V1"]}
   ],
   "sources": ["E1", "E2", "E3"],
-  "status": "example"
+  "status": "internal-preview",
+  "previewLabel": "内部试读 · 示例数据",
+  "publishedAt": null
 }

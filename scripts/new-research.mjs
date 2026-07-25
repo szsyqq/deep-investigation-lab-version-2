@@ -14,7 +14,7 @@ if (!request) {
 try {
   const result = createPackage(process.cwd(), request, slug);
   console.log(`Created ${result.type} research package: ${path.relative(process.cwd(), result.reportDir)}`);
-  console.log("Next: complete brief.json and evidence-ledger.json before drafting claims.");
+  console.log("Next: complete brief.json, convene the discussion group in discussion.md, then begin iterative research.");
 } catch (error) {
   console.error(error.message);
   process.exit(1);

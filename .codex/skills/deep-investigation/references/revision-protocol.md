@@ -2,7 +2,7 @@
 
 Before changing a published or approved report:
 
-1. Read `brief.json`, `claim-map.json`, `visual-plan.json`, `editorial-state.json`, and `publication.json`.
+1. Read `brief.json`, `workflow-state.json`, `outline.md`, `draft.md`, `claim-map.json`, `visual-plan.json`, `editorial-state.json`, `revisions.md`, and `publication.json`.
 2. Translate the user's feedback into a specific problem.
 3. Classify its depth.
 
@@ -13,7 +13,9 @@ Before changing a published or approved report:
 - `structural-revision`: claim order, section responsibilities or visual logic changes.
 - `full-rewrite`: the core question or thesis changes, or feedback identifies five or more interacting structural faults.
 
-For structural work, update the claim map and visual plan before prose. Never solve a structural request by appending a paragraph.
+For structural work, update the outline and claim map before prose, then update the visual plan. Never solve a structural request by appending a paragraph.
+
+After any revision, reread the affected section plus its preceding and following sections. The output must remain a complete article, not an old draft with a new block inserted.
 
 ## Decision memory
 
@@ -28,3 +30,5 @@ Append to `editorial-state.json.decisions`:
 - date.
 
 Do not automatically rewrite global rules from one decision. Propose a rule change only after repeated, similar decisions.
+
+Append a human-readable entry to `revisions.md` as well. This is the analyst-facing history; `editorial-state.json` remains the machine-readable decision memory.

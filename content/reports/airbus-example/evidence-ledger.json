@@ -1,5 +1,5 @@
 {
-  "schemaVersion": "1.0.0",
+  "schemaVersion": "2.0.0",
   "reportId": "airbus-example",
   "items": [
     {"id": "E1", "kind": "example", "title": "积压订单示例数据", "publisher": "Demo", "url": "", "publishedAt": "", "accessedAt": "2026-07-25", "summary": "积压订单 9,037 架", "confidence": "example"},

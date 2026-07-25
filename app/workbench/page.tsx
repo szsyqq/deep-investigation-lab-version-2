@@ -26,24 +26,24 @@ export default function Workbench() {
     <main className="workbench">
       <Link className="back-link" href="/">← 返回首页</Link>
       <header className="workbench-header">
-        <span className="kicker">RESEARCH INTAKE</span>
+        <span className="kicker">REPORT PRODUCTION INTAKE</span>
         <h1>用一句话启动调查</h1>
-        <p>这里展示 V2 的第一道关卡：先识别研究对象和问题结构，再进入检索。真正运行时，Codex 会把完整研究包写入内容目录。</p>
+        <p>系统先识别研究路线，再召集讨论角色形成读者问题，随后进入可以反复返回的全网研究。它不会从一句任务直接跳到网页。</p>
       </header>
       <section className="planner">
         <div className="planner-input">
           <label htmlFor="request">你想调查什么？</label>
           <textarea id="request" value={request} onChange={(event) => setRequest(event.target.value)} />
-          <button type="button">生成研究任务卡</button>
+          <button type="button">生成调查启动卡</button>
         </div>
         <div className="planner-output" aria-live="polite">
           <span className="result-type">{result.type}</span>
           <h2>{result.title}</h2>
-          <p>系统将先形成问题树、证据需求和反证条件，不直接写结论。</p>
+          <p>下一步将由主编、分析师、调查员、反方审稿人、数据编辑和读者代表共同形成研究议程，不直接写结论。</p>
           <ol className="question-list">{result.questions.map((q) => <li key={q}>{q}</li>)}</ol>
         </div>
       </section>
-      <p className="workbench-note">命令行入口：运行 <code>npm run research:new -- “你的研究请求”</code>，即可生成独立研究包。</p>
+      <p className="workbench-note">命令行入口：运行 <code>npm run research:new -- “你的研究请求”</code>，即可生成包含讨论、底稿、初稿、审核与发布状态的独立研究包。</p>
     </main>
   );
 }

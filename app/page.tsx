@@ -1,12 +1,13 @@
 import Link from "next/link";
 
 const stages = [
-  ["01", "识别研究类型", "先判断主体研究或话题研究，生成不同的问题树。"],
-  ["02", "建立证据账本", "关键事实逐条绑定来源、日期、口径与可信度。"],
-  ["03", "编辑研讨", "从读者、市场、争议与反证四个视角提炼真正问题。"],
-  ["04", "形成研究主张", "先固定论点与章节职责，再开始写正文。"],
-  ["05", "规划视觉表达", "先判断要证明什么，再选择观点图、数据图或纯正文。"],
-  ["06", "核查并发布", "自动检查引用、图表数据、移动端与结构完整性。"],
+  ["01", "接收任务", "自动识别主体研究或话题研究，确认范围与反证条件。"],
+  ["02", "讨论与研究", "讨论团从读者、市场和反方视角提出问题，并反复补充调查。"],
+  ["03", "框架与底稿", "保存全部来源，形成论点、章节职责和完整报告框架。"],
+  ["04", "撰写初稿", "先完成一篇以文字为主、前后连贯、可以独立阅读的文章。"],
+  ["05", "视觉编辑", "从正文主张出发，增加真正降低理解成本的图表和解释。"],
+  ["06", "审核与修改", "检查相似性、事实和结构，并把分析师意见自然融入全文。"],
+  ["07", "预览与发布", "先进入内部试读，分析师明确批准后再发布到正式主页面。"],
 ];
 
 const patterns = [
@@ -46,23 +47,23 @@ export default function Home() {
         </div>
         <div className="hero-proof">
           <span><b>2</b> 种研究路线</span>
-          <span><b>6</b> 道强制关卡</span>
+          <span><b>7</b> 个生产阶段</span>
           <span><b>1</b> 套固定发布框架</span>
         </div>
       </section>
 
       <section className="statement">
-        <p>旧方式从正文直接跳到网页。</p>
-        <h2>V2 把“研究判断”留在系统里。</h2>
+        <p>旧方式从一次搜索直接跳到网页。</p>
+        <h2>V2 保存研究、写作与修改的全过程。</h2>
         <div className="flow">
-          <span>研究请求</span><i>→</i><span>研究包</span><i>→</i><span>视觉计划</span><i>→</i><span>固定渲染器</span>
+          <span>调查任务</span><i>→</i><span>反复研究</span><i>→</i><span>完整初稿</span><i>→</i><span>审核发布</span>
         </div>
       </section>
 
       <section className="section" id="workflow">
         <div className="section-heading">
-          <div><span className="kicker">RESEARCH PROTOCOL</span><h2>六阶段研究协议</h2></div>
-          <p>每一阶段都有明确输入、输出和通过条件。未通过核查，不进入发布。</p>
+          <div><span className="kicker">REPORT PRODUCTION</span><h2>七阶段报告生产流程</h2></div>
+          <p>用户只需要提出任务和反馈。底层证据映射、版本状态和校验由系统处理。</p>
         </div>
         <div className="stage-grid">
           {stages.map(([no, title, copy]) => (
@@ -110,7 +111,7 @@ export default function Home() {
           <div className="system-block variable">
             <span>内容层</span>
             <h3>研究包</h3>
-            <ul><li>论点与章节</li><li>证据账本</li><li>视觉计划</li><li>编辑状态</li></ul>
+            <ul><li>讨论与研究笔记</li><li>来源与证据</li><li>完整初稿</li><li>审核与修改记录</li></ul>
           </div>
           <div className="system-arrow">=</div>
           <div className="system-block result">

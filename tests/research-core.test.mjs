@@ -3,7 +3,7 @@ import assert from "node:assert/strict";
 import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
-import { classifyResearch, createPackage, validatePackage } from "../scripts/research-core.mjs";
+import { classifyResearch, classifyRevision, createPackage, validatePackage, WORKFLOW_STAGES } from "../scripts/research-core.mjs";
 
 test("classifies entity and topic research", () => {
   assert.equal(classifyResearch("调查空客为什么交付下降"), "entity");
@@ -16,6 +16,18 @@ test("creates isolated, valid research package", () => {
   assert.equal(type, "entity");
   assert.deepEqual(validatePackage(reportDir), []);
   assert.ok(fs.existsSync(path.join(reportDir, "visual-plan.json")));
+  assert.ok(fs.existsSync(path.join(reportDir, "discussion.md")));
+  assert.ok(fs.existsSync(path.join(reportDir, "draft.md")));
+  assert.ok(fs.existsSync(path.join(reportDir, "sources")));
+  const workflow = JSON.parse(fs.readFileSync(path.join(reportDir, "workflow-state.json"), "utf8"));
+  assert.deepEqual(workflow.stages.map((stage) => stage.id), WORKFLOW_STAGES);
+});
+
+test("classifies analyst revisions before editing", () => {
+  assert.equal(classifyRevision("请更新这段财务数据和来源"), "evidence-update");
+  assert.equal(classifyRevision("这一段读起来生硬，请自然改写"), "local-rewrite");
+  assert.equal(classifyRevision("需要重排供应链章节顺序"), "structural-revision");
+  assert.equal(classifyRevision("核心问题改变，需要整体重写"), "full-rewrite");
 });
 
 test("example package passes referential integrity", () => {

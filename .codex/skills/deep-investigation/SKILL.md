@@ -5,7 +5,7 @@ description: Run evidence-led investigations from an open-ended Chinese or Engli
 
 # Deep Investigation
 
-Produce a structured research package before producing prose or a webpage. Keep each report isolated under `content/reports/<slug>/`; use the shared site renderer.
+Produce a complete report through a simple seven-stage lifecycle. Keep each report isolated under `content/reports/<slug>/`; use the shared site renderer. The user should see the report-production stages, while evidence mapping and validation remain background controls.
 
 ## Start
 
@@ -13,34 +13,36 @@ Produce a structured research package before producing prose or a webpage. Keep 
 2. Read `references/research-routing.md`.
 3. Run `npm run research:new -- "<user request>"` unless the report package already exists.
 4. Open the generated `brief.json`.
-5. For a revision, also read `references/revision-protocol.md` and the report's `editorial-state.json`.
+5. For a revision, also read `references/revision-protocol.md`, `workflow-state.json`, `editorial-state.json`, `draft.md`, and `revisions.md`.
 
-## Execute the gates in order
+## Execute the seven production stages
 
-### Gate 1: Scope
+### Stage 1: Intake and route
 
 Classify the work as `entity` or `topic`. Complete the core question, time/geographic scope, exclusions, subquestions, and disconfirming evidence. Do not draft conclusions.
 
-### Gate 2: Evidence
+### Stage 2: Discussion and iterative research
 
-Research comprehensively using current primary sources first. Record every material source in `evidence-ledger.json`. Preserve conflicting evidence; do not silently choose the convenient version. Browse whenever current or precise claims require it.
+Convene the editorial roles: lead editor, subject analyst, investigator, skeptical reviewer, data editor, and reader representative. Record their questions and research directions in `discussion.md`.
 
-### Gate 3: Claims
+Research comprehensively using current primary sources first. Record every material source in `evidence-ledger.json` and preserve source working material under `sources/`. Record each research loop in `research-notes.md` and `workflow-state.json.researchLoops`. Preserve conflicting evidence; do not silently choose the convenient version. Continue until the core questions, mechanisms, counterarguments, and important uncertainties are sufficiently covered.
 
-Create `claim-map.json`. Separate:
+### Stage 3: Outline and source dossier
+
+Create `claim-map.json` and `outline.md`. Separate:
 
 - `fact`: directly supported;
 - `analysis`: reasoned interpretation;
 - `unverified`: unresolved;
 - `forecast`: conditional future statement.
 
-Every publishable claim needs evidence IDs. Add counterevidence and confidence.
+Every publishable claim needs evidence IDs. Add counterevidence and confidence. Give every proposed section one responsibility, one core conclusion, and its evidence IDs.
 
-### Gate 4: Editorial structure
+### Stage 4: Prose-first draft
 
-Define one `sectionPurpose` per section. Use a claim-led narrative, not a checklist of business dimensions. If new material changes the claim or section responsibility, restructure before rewriting prose.
+Write a complete, continuous article in `draft.md` before designing the page. Use a claim-led narrative, not a checklist of business dimensions. If drafting reveals an evidence gap, return to Stage 2. If new material changes the claim or section responsibility, revise `outline.md` before rewriting prose.
 
-### Gate 5: Visual plan
+### Stage 5: Visual editing
 
 Read `references/visual-planning.md`. For every candidate visual:
 
@@ -52,9 +54,15 @@ Read `references/visual-planning.md`. For every candidate visual:
 
 Use `prose-only` when evidence or relationship is insufficient. Never impose a chart quota.
 
-### Gate 6: Publication
+### Stage 6: Review and analyst revision
 
-Complete `publication.json`, retaining evidence mappings. Add or update a route through shared components. Never create a standalone report framework or copy global CSS/JS into a report.
+Review source similarity and repetition, factual support, narrative structure, visual usefulness, and mobile readability. Record findings in `review.md`.
+
+Classify every analyst request before editing: evidence update, local rewrite, structural revision, or full rewrite. Integrate changes into a coherent whole rather than appending a patch. Record the request, classification, affected scope, final decision, and analyst confirmation in `revisions.md` and `editorial-state.json`.
+
+### Stage 7: Internal preview and publication
+
+Complete `publication.json`, retaining evidence mappings. First set the report to `internal-preview` and show its preview label and unresolved questions. Formal publication requires explicit analyst approval and a status change to `approved` or `published`. Add or update a route through shared components. Never create a standalone report framework or copy global CSS/JS into a report.
 
 Run:
 
@@ -64,7 +72,7 @@ npm test
 npm run build
 ```
 
-Fix failures before describing the report as publishable.
+Fix failures before describing the report as publishable. Use `npm run research:advance -- <slug> --to=<stage-or-status>` to update machine-readable workflow or publication state. Record explicit analyst approval with `npm run research:approve -- <slug> "<approval note>"` before changing status to `published`.
 
 ## Revision discipline
 

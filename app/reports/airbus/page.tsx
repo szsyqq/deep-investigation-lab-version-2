@@ -5,13 +5,13 @@ export default function AirbusReport() {
     <main className="report">
       <header className="report-header">
         <Link href="/">DEEP INVESTIGATION LAB V2</Link>
-        <span>示例研究包 · 结构演示</span>
+        <span>内部试读 · 示例研究包 · 尚未正式发布</span>
       </header>
       <section className="report-hero">
         <span className="tag">主体研究 / 航空制造</span>
         <h1>订单堆成山，飞机为何交不出去？</h1>
         <p className="report-deck">空客的需求从未如此强劲，但发动机短缺把订单、交付和现金流拉向了三个不同方向。</p>
-        <div className="report-meta">调查团队 · 示例页面 · 数据仅用于展示 V2 表达结构</div>
+        <div className="report-meta">当前状态：内部预览 · 分析师尚未批准正式发布 · 数据仅用于展示 V2 表达结构</div>
       </section>
       <article className="report-body">
         <div className="metric-strip">

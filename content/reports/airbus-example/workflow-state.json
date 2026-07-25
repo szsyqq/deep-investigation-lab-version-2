@@ -1,0 +1,21 @@
+{
+  "schemaVersion": "2.0.0",
+  "reportId": "airbus-example",
+  "currentStage": "preview-publication",
+  "stages": [
+    {"id": "intake", "status": "completed"},
+    {"id": "discussion-research", "status": "completed"},
+    {"id": "outline-sources", "status": "completed"},
+    {"id": "drafting", "status": "completed"},
+    {"id": "visual-editing", "status": "completed"},
+    {"id": "review-revision", "status": "completed"},
+    {"id": "preview-publication", "status": "in-progress"}
+  ],
+  "researchLoops": [
+    {"round": 1, "finding": "订单、交付和现金流出现背离。", "nextQuestion": "供应瓶颈通过哪些环节传导？", "status": "completed"},
+    {"round": 2, "finding": "发动机供应与维修需求互相挤压。", "nextQuestion": "是否存在季节性等替代解释？", "status": "completed"}
+  ],
+  "analystApproval": {"status": "pending", "approvedAt": null, "note": "示例报告，仅供内部试读。"},
+  "visibility": "internal",
+  "updatedAt": "2026-07-25T00:00:00.000Z"
+}

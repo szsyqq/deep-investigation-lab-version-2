@@ -1,8 +1,9 @@
 {
-  "schemaVersion": "1.0.0",
+  "schemaVersion": "2.0.0",
   "reportId": "airbus-example",
   "approvedSections": ["hero", "contradiction"],
   "lockedFacts": [],
+  "openQuestions": ["正式报告需要补充真实来源与替代解释。"],
   "decisions": [
     {"id": "D1", "action": "replace", "from": "three trend charts", "to": "story-flow", "reason": "强调背离与传导，而非重复数字。"}
   ]
