@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "1.0.0",
+  "reportId": "airbus-example",
+  "visuals": [
+    {
+      "id": "V1",
+      "claimId": "C1",
+      "pattern": "contradiction-causal-chain",
+      "component": "story-flow",
+      "title": "订单为何没有变成交付",
+      "readerTakeaway": "供应瓶颈切断了需求到现金的转化。",
+      "evidenceIds": ["E1", "E2", "E3"],
+      "whyThisForm": "正文要表达传导关系，而不是三条彼此独立的趋势。",
+      "doNotUse": ["three-unrelated-line-charts"]
+    }
+  ]
+}

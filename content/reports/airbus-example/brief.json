@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "1.0.0",
+  "id": "airbus-example",
+  "request": "调查空客为什么订单创新高，交付和现金流却同时承压",
+  "researchType": "entity",
+  "status": "example",
+  "asOf": "2026-07-25",
+  "scope": {
+    "included": ["订单", "交付", "发动机供应", "现金流"],
+    "excluded": ["投资建议", "股价预测"],
+    "geography": "全球",
+    "period": "示例"
+  },
+  "coreQuestion": "需求增长为何没有转化为交付和现金？",
+  "subQuestions": ["订单与交付的口径是什么？", "供应瓶颈经过哪些环节传导？", "有哪些其他解释？"],
+  "disconfirmingEvidence": ["若交付下降主要由季节性而非供应造成，则需弱化因果主张。"]
+}

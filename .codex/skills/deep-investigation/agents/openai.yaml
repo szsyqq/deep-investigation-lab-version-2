@@ -1,0 +1,4 @@
+interface:
+  display_name: "深度调查研究"
+  short_description: "识别研究类型并完成证据核查、视觉规划与网站发布流程"
+  default_prompt: "使用 $deep-investigation 对指定主体或话题开展全面调查研究并生成可发布报告。"

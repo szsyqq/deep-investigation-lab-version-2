@@ -1,0 +1,9 @@
+{
+  "schemaVersion": "1.0.0",
+  "reportId": "airbus-example",
+  "approvedSections": ["hero", "contradiction"],
+  "lockedFacts": [],
+  "decisions": [
+    {"id": "D1", "action": "replace", "from": "three trend charts", "to": "story-flow", "reason": "强调背离与传导，而非重复数字。"}
+  ]
+}
