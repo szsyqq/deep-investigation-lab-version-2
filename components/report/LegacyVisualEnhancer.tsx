@@ -70,12 +70,31 @@ export default function LegacyVisualEnhancer() {
       }
     }, { threshold: 0.12 });
     root.querySelectorAll("[data-w],[data-h],[data-da],[data-count]").forEach((element) => visualObserver.observe(element));
-    observers.push(visualObserver);
-
-    root.querySelectorAll<HTMLElement>("[data-tip]").forEach((element) => {
-      const tip = element.dataset.tip;
-      if (tip && !element.title) element.title = tip;
+    root.querySelectorAll(".donut").forEach((element) => {
+      const donutObserver = new IntersectionObserver((entries, observer) => {
+        for (const entry of entries) {
+          if (!entry.isIntersecting) continue;
+          (entry.target as HTMLElement).style.transform = "scale(1) rotate(360deg)";
+          observer.unobserve(entry.target);
+        }
+      }, { threshold: 0.2 });
+      donutObserver.observe(element);
+      observers.push(donutObserver);
     });
+    root.querySelectorAll<SVGPathElement>("path[stroke-dasharray][stroke-dashoffset]").forEach((element) => {
+      const lineObserver = new IntersectionObserver((entries, observer) => {
+        for (const entry of entries) {
+          if (!entry.isIntersecting) continue;
+          const path = entry.target as SVGPathElement;
+          path.style.transition = "stroke-dashoffset 1.4s ease";
+          path.style.strokeDashoffset = "0";
+          observer.unobserve(path);
+        }
+      }, { threshold: 0.2 });
+      lineObserver.observe(element);
+      observers.push(lineObserver);
+    });
+    observers.push(visualObserver);
 
     return () => {
       observers.forEach((observer) => observer.disconnect());

@@ -39,7 +39,10 @@ test("published archive has a complete, isolated registry", () => {
   const registry = JSON.parse(fs.readFileSync(path.resolve("content/published-reports.json"), "utf8"));
   assert.equal(registry.length, 21);
   assert.equal(new Set(registry.map((report) => report.slug)).size, registry.length);
+  const allowedCategories = new Set(["公司", "产业", "资本", "政策", "技术", "社会议题"]);
+  assert.ok([...allowedCategories].every((category) => registry.some((report) => report.category === category)));
   for (const report of registry) {
+    assert.ok(allowedCategories.has(report.category), `invalid category: ${report.slug}`);
     assert.equal(report.href, `/reports/${report.slug}`);
     const contentPath = path.resolve("content/published", report.slug, "content.json");
     assert.ok(fs.existsSync(contentPath), `missing published package: ${report.slug}`);

@@ -2,7 +2,7 @@ export default function LegalFooter() {
   return (
     <footer className="shared-legal-footer">
       <div>
-        <b>统一法律与资料声明</b>
+        <b>法律资料声明</b>
         <p>本档案室所有内容均基于公开信息形成，仅供研究参考，不构成投资建议、要约或推荐。文中判断可能随新披露而变化，读者应独立核验并自行判断。</p>
       </div>
       <div>

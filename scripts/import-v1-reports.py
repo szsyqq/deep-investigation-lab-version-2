@@ -9,6 +9,30 @@ import re
 import sys
 from pathlib import Path
 
+CATEGORY_BY_SLUG = {
+    "tencent": "公司",
+    "fund-gray": "社会议题",
+    "deepseek": "公司",
+    "cai-fu": "政策",
+    "shenzhen-air": "公司",
+    "copper": "产业",
+    "airbus": "公司",
+    "invesco-greatwall": "资本",
+    "rongtong": "资本",
+    "pingansec": "公司",
+    "hilton": "公司",
+    "wuliangye": "公司",
+    "xiaohongshu": "公司",
+    "zhipu": "技术",
+    "bmw": "公司",
+    "seres": "公司",
+    "chowsangsang": "公司",
+    "suiyuan": "技术",
+    "jiantao": "产业",
+    "changxin": "技术",
+    "yushu": "技术",
+}
+
 
 def clean_text(value: str) -> str:
     value = re.sub(r"<[^>]+>", "", value)
@@ -65,6 +89,8 @@ def main() -> None:
         body = re.sub(r"<script\b[^>]*>[\s\S]*?</script>", "", body, flags=re.I)
         body = re.sub(r'<div class="disclaimer"[^>]*>[\s\S]*?</div>', "", body, flags=re.I)
         body = re.sub(r"<!--[\s\S]*?-->", "", body)
+        body = re.sub(r'\sdata-tip=(["\']).*?\1', "", body, flags=re.I)
+        body = re.sub(r'\sdata-detail=(["\']).*?\1', "", body, flags=re.I)
         body = re.sub(r"</div>\s*$", "", body, count=1)
         body = remove_first_div_by_class(body, "hero")
         styles = "\n".join(re.findall(r"<style[^>]*>([\s\S]*?)</style>", raw, flags=re.I))
@@ -93,6 +119,7 @@ def main() -> None:
         registry.append(
             {
                 **item,
+                "category": CATEGORY_BY_SLUG.get(slug, "公司"),
                 "slug": slug,
                 "href": f"/reports/{slug}",
                 "sourceRepository": "szsyqq/DeepInvestigationLab",

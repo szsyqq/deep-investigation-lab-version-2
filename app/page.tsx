@@ -1,6 +1,6 @@
 import Link from "next/link";
 import reports from "../content/published-reports.json";
-import { formatReportDate } from "../lib/format-report-date";
+import ReportDirectory from "../components/home/ReportDirectory";
 
 export default function Home() {
   return (
@@ -39,23 +39,7 @@ export default function Home() {
           <div><span>PUBLISHED INVESTIGATIONS</span><h2>全部正式报道</h2></div>
           <p>公司、产业、资本、政策与技术领域的公开调查和深度报道。</p>
         </div>
-        <div className="news-report-list">
-          {reports.map((report, index) => (
-            <Link className="news-report-card" href={report.href} key={report.slug}>
-              <div className="news-report-number">{String(index + 1).padStart(2, "0")}</div>
-              <div className="news-report-copy">
-                {report.trial && <div className="news-report-status">试读</div>}
-                <div className="news-report-meta">
-                  <b>{report.co}</b>
-                  <div className="news-report-tags">{report.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
-                </div>
-                <h3>{report.title}</h3>
-                <p>{report.desc}</p>
-                <div className="news-report-foot"><span>发布于 {formatReportDate(report.date)} · {report.readingTime}</span><b>阅读全文 →</b></div>
-              </div>
-            </Link>
-          ))}
-        </div>
+        <ReportDirectory reports={reports} />
       </section>
 
       <footer className="news-footer">

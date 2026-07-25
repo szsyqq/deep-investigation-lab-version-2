@@ -13,6 +13,7 @@
 | 顶部导航与章节目录 | `components/report/ArticleChrome.tsx` | 全部正式报道 |
 | 标题、引言、署名规范 | `components/report/PublishedArticle.tsx` | 全部正式报道 |
 | 旧报道图表动效兼容 | `components/report/LegacyVisualEnhancer.tsx` | 含旧式数据图表的正式报道 |
+| 首页分类与筛选 | `components/home/ReportDirectory.tsx` | 正式首页 |
 | 报道入口与排序 | `content/published-reports.json` | 正式首页、静态路由 |
 | 正文内容 | `content/published/<slug>/content.json` | 对应的一篇报道 |
 
@@ -22,12 +23,14 @@
 2. 读者打开任一页面时，全局布局加载唯一的 EOB 组件。
 3. 若浏览器尚未记录同意，页面锁定滚动并显示声明；确认后写入 `localStorage`。
 4. `/reports/[slug]` 根据 slug 查找元数据和正文内容包。
-5. `PublishedArticle` 先加载原报道所需的兼容样式，再以优先级更高的共享规范统一标题、引言和署名。
+5. `PublishedArticle` 先加载原报道所需的兼容样式，再以优先级更高的共享规范统一 720 像素正文栏、标题、引言和署名。
 6. 试读报道在标题区最前方显示统一的绿色“试读”提示，并说明框架与判断尚待分析师最终审阅；正式报道不显示该提示。
-7. `ArticleChrome` 根据正文中的章节 ID 生成目录，监听页面滚动并显示阅读进度和当前章节。
-8. `LegacyVisualEnhancer` 恢复旧内容包中数据柱、计数器、环形图和渐入元素的触发效果，不恢复旧页面的导航或法律弹窗脚本。
-9. 正文末尾统一追加法律注记。文章本身不再携带独立声明弹窗或独立页脚。
-10. 构建时为 21 个 slug 生成静态页面，适配 GitHub Pages。
+7. 首页把报道分类、主题与试读状态放在同一行，并允许按公司、产业、资本、政策、技术和社会议题筛选。
+8. `ArticleChrome` 在全部文章顶部显示统一的内部资料标签，根据正文中的章节 ID 生成目录，监听页面滚动并显示阅读进度和当前章节。
+9. `LegacyVisualEnhancer` 恢复旧内容包中数据柱、计数器、环形图、折线描边和渐入元素的触发效果，不恢复旧页面的导航或法律弹窗脚本。
+10. 旧报道中的数字点击释义和悬浮术语提示在导入时移除，避免不同年代文章出现不一致的交互。
+11. 正文末尾统一追加标题为“法律资料声明”的法律注记。文章本身不再携带独立声明弹窗或独立页脚。
+12. 构建时为 21 个 slug 生成静态页面，适配 GitHub Pages。
 
 ## 新文章的维护顺序
 
@@ -35,7 +38,7 @@
 2. 通过 `npm run research:validate` 和 `npm test`。
 3. 获得分析师正式批准。
 4. 将批准版本转换为发布内容包。
-5. 在 `content/published-reports.json` 登记元数据和排序。
+5. 在 `content/published-reports.json` 登记元数据、`category` 分类和排序。
 6. 运行校验与静态构建。
 7. 先部署到内部试读路径检查，确认后进入正式首页。
 
