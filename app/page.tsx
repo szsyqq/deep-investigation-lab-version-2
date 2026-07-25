@@ -28,6 +28,7 @@ export default function Home() {
           <a href="#workflow">研究流程</a>
           <a href="#visuals">表达规范</a>
           <Link href="/reports/airbus">示例报告</Link>
+          <Link href="/manual">操作手册</Link>
           <Link className="nav-cta" href="/workbench">开始研究</Link>
         </nav>
       </header>
@@ -122,7 +123,7 @@ export default function Home() {
 
       <footer>
         <div><b>Deep Investigation Lab V2</b><span>Research architecture for evidence-led reporting.</span></div>
-        <Link href="/workbench">开始一项调查 →</Link>
+        <Link href="/manual">阅读操作手册 →</Link>
       </footer>
     </main>
   );

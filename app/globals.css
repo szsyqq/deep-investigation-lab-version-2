@@ -144,3 +144,71 @@ footer > a { color: var(--red); font-weight: 700; font-size: 13px; }
   .story-flow { grid-template-columns: 1fr; }
   .story-flow i { transform: rotate(90deg); padding: 10px; }
 }
+
+.manual { background: #f4f1e8; min-height: 100vh; }
+.manual-top { height: 66px; padding: 0 5vw; border-bottom: 1px solid var(--line); display: grid; grid-template-columns: 1fr 1fr 1fr; align-items: center; font-size: 12px; letter-spacing: .08em; }
+.manual-top span { text-align: center; color: var(--muted); }
+.manual-top a:last-child { text-align: right; color: var(--red); font-weight: 700; }
+.manual-hero { padding: 95px 15vw 80px; border-bottom: 1px solid var(--line); position: relative; overflow: hidden; }
+.manual-hero::after { content: "MANUAL"; position: absolute; right: -20px; bottom: -25px; font: 900 150px Arial; color: rgba(23,25,20,.035); }
+.manual-hero h1 { font: 500 clamp(52px,7vw,96px)/1.02 Georgia,"Songti SC",serif; letter-spacing: -.045em; margin: 20px 0; }
+.manual-hero > p { max-width: 720px; color: var(--muted); font: 18px/1.9 Georgia,"Songti SC",serif; }
+.manual-version { margin-top: 30px; color: var(--red); font-size: 11px; letter-spacing: .1em; }
+.manual-toc { position: sticky; top: 0; z-index: 3; display: grid; grid-template-columns: repeat(4,1fr); background: var(--dark); color: white; padding: 0 5vw; }
+.manual-toc a { padding: 18px 15px; border-right: 1px solid #46504b; font-size: 12px; }
+.manual-toc b { color: var(--gold); margin-right: 10px; }
+.manual-content { max-width: 1220px; margin: auto; padding: 30px 5vw 100px; }
+.manual-section { display: grid; grid-template-columns: 120px 1fr; gap: 35px; padding: 95px 0; border-bottom: 1px solid var(--line); scroll-margin-top: 60px; }
+.chapter-number { font: 500 70px Georgia; color: #d1cdc2; }
+.manual-section h2 { font: 500 clamp(40px,5vw,64px) Georgia,"Songti SC",serif; margin: 10px 0 25px; }
+.lead { color: var(--muted); font: 20px/1.7 Georgia,"Songti SC",serif; max-width: 720px; }
+.prompt-card { display: grid; grid-template-columns: 120px 1fr; border-top: 1px solid var(--line); padding: 22px 0; align-items: center; }
+.prompt-card span { color: var(--red); font-size: 12px; font-weight: 700; }
+.prompt-card p { margin: 0; font: 18px/1.7 Georgia,"Songti SC",serif; }
+.manual-steps { counter-reset: manual-step; padding: 0; list-style: none; margin: 45px 0; }
+.manual-steps li { display: grid; grid-template-columns: 230px 1fr; padding: 19px 0; border-top: 1px solid var(--line); }
+.manual-steps li:last-child { border-bottom: 1px solid var(--line); }
+.manual-steps span { color: var(--muted); line-height: 1.6; }
+.manual-callout,.priority-box { background: var(--red); color: white; padding: 30px; }
+.manual-callout p { font: 20px/1.6 Georgia,"Songti SC",serif; margin: 12px 0 0; }
+.layer-grid { display: grid; grid-template-columns: repeat(3,1fr); margin-top: 40px; }
+.layer-grid > div { padding: 25px; border: 1px solid var(--line); margin-right: -1px; }
+.layer-grid span { color: var(--red); font-size: 11px; }
+.layer-grid h3 { font: 500 24px Georgia,"Songti SC",serif; }
+.layer-grid p { color: var(--muted); line-height: 1.7; font-size: 13px; }
+.subhead { font: 500 28px Georgia,"Songti SC",serif; margin-top: 55px; }
+.maintenance-flow { display: flex; align-items: center; gap: 9px; flex-wrap: wrap; margin: 25px 0; }
+.maintenance-flow span { background: var(--dark); color: white; padding: 12px 15px; font-size: 12px; }
+.maintenance-flow i { color: var(--red); }
+.check-list { padding-left: 20px; color: var(--muted); line-height: 2; }
+.command-table { border-top: 1px solid var(--line); margin-top: 35px; }
+.command-row { display: grid; grid-template-columns: 130px 1.3fr 1fr; gap: 25px; padding: 20px 0; border-bottom: 1px solid var(--line); align-items: center; }
+.command-row code { background: white; border: 1px solid #ddd8cb; padding: 9px 12px; font-size: 12px; overflow-wrap: anywhere; }
+.command-row span { color: var(--muted); font-size: 13px; line-height: 1.6; }
+.feature-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; }
+.feature-grid > div { background: white; padding: 22px; min-height: 130px; }
+.feature-grid p { color: var(--muted); font-size: 13px; line-height: 1.7; }
+.roadmap-list { border-top: 1px solid var(--line); margin: 35px 0; }
+.roadmap-row { display: grid; grid-template-columns: 65px 50px 1fr; gap: 25px; border-bottom: 1px solid var(--line); padding: 24px 0; }
+.roadmap-row > span { color: var(--red); font-size: 11px; }
+.roadmap-row > b { font: 500 20px Georgia; color: #aaa69c; }
+.roadmap-row h3 { margin: 0 0 8px; font: 500 22px Georgia,"Songti SC",serif; }
+.roadmap-row p { margin: 0; color: var(--muted); line-height: 1.7; }
+.priority-box { background: var(--dark); margin-top: 45px; }
+.priority-box > span { color: var(--gold); font-size: 11px; letter-spacing: .12em; }
+.priority-box h3 { font: 500 30px Georgia,"Songti SC",serif; margin: 15px 0; }
+.priority-box p { color: #bdc3bd; line-height: 1.8; max-width: 720px; }
+.manual-footer { padding: 40px 6vw; background: var(--dark); color: white; display: flex; justify-content: space-between; }
+.manual-footer a { color: var(--gold); }
+
+@media (max-width: 800px) {
+  .manual-top { grid-template-columns: 1fr 1fr; }
+  .manual-top span { display: none; }
+  .manual-hero { padding: 65px 7vw; }
+  .manual-toc { grid-template-columns: repeat(2,1fr); position: relative; }
+  .manual-section { grid-template-columns: 1fr; padding: 65px 0; }
+  .chapter-number { font-size: 45px; }
+  .prompt-card,.manual-steps li,.command-row { grid-template-columns: 1fr; gap: 10px; }
+  .layer-grid,.feature-grid { grid-template-columns: 1fr; }
+  .roadmap-row { grid-template-columns: 55px 35px 1fr; gap: 10px; }
+}
