@@ -30,7 +30,6 @@ export default function Home() {
           <div className="news-kicker">编辑部说明</div>
           <h2>让事实先于结论，<br />让调查成为可以复核的档案。</h2>
           <p className="news-deck">这里发布基于公开文件、监管资料、公司披露与可交叉验证信息形成的深度报道。每篇文章先经过研究、完整写作、视觉编辑、事实审核和内部试读，再进入正式首页。</p>
-          <div className="news-byline">调查团队 · THE INVESTIGATION</div>
         </div>
       </section>
 

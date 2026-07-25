@@ -12,5 +12,8 @@ Non-negotiable rules:
 - Every published factual claim must map to an evidence ID.
 - Preserve approved sections during revisions. Classify a request as evidence update, local rewrite, structural revision, or full rewrite before editing.
 - Do not alter another report to fix the current report.
+- When a presentation defect can affect more than one report, fix the shared renderer, importer, or design tokens rather than patching a report package.
+- Published report packages must not contain copied navigation, legal notices, scripts, inline event handlers, or legacy tooltip attributes.
+- Every shared publication-framework fix must add or update an automated regression check and be recorded in `docs/framework-decision-log.md`.
 - A report may publish only after `npm run research:validate` and `npm test` pass.
 - Internal preview is not formal publication. Set `publication.json.status` to `published` only after explicit analyst approval.

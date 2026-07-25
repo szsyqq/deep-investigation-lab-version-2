@@ -91,6 +91,7 @@ def main() -> None:
         body = re.sub(r"<!--[\s\S]*?-->", "", body)
         body = re.sub(r'\sdata-tip=(["\']).*?\1', "", body, flags=re.I)
         body = re.sub(r'\sdata-detail=(["\']).*?\1', "", body, flags=re.I)
+        body = re.sub(r'\s+on[a-z]+\s*=\s*(["\']).*?\1', "", body, flags=re.S | re.I)
         body = re.sub(r"</div>\s*$", "", body, count=1)
         body = remove_first_div_by_class(body, "hero")
         styles = "\n".join(re.findall(r"<style[^>]*>([\s\S]*?)</style>", raw, flags=re.I))

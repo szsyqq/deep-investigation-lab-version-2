@@ -52,14 +52,25 @@ test("published archive has a complete, isolated registry", () => {
     assert.deepEqual(content.chapters[0], { id: "report-top", label: "导语" });
     assert.equal(/<script[\s>]/i.test(content.articleHtml), false, `script leaked into article: ${report.slug}`);
     assert.equal(/consent-overlay/i.test(content.articleHtml), false, `legacy consent leaked into article: ${report.slug}`);
+    assert.equal(/\son[a-z]+\s*=/i.test(content.articleHtml), false, `inline interaction leaked into article: ${report.slug}`);
+    assert.equal(/\sdata-(?:tip|detail)\s*=/i.test(content.articleHtml), false, `legacy tooltip leaked into article: ${report.slug}`);
   }
 });
 
 test("legal notice and report shell are maintained as shared components", () => {
   const layout = fs.readFileSync(path.resolve("app/layout.tsx"), "utf8");
   const article = fs.readFileSync(path.resolve("components/report/PublishedArticle.tsx"), "utf8");
+  const chrome = fs.readFileSync(path.resolve("components/report/ArticleChrome.tsx"), "utf8");
+  const legal = fs.readFileSync(path.resolve("components/legal/LegalFooter.tsx"), "utf8");
+  const css = fs.readFileSync(path.resolve("app/globals.css"), "utf8");
+  const home = fs.readFileSync(path.resolve("app/page.tsx"), "utf8");
   assert.match(layout, /EobLegalNotice/);
   assert.match(article, /ArticleChrome/);
   assert.match(article, /LegalFooter/);
   assert.match(article, /LegacyVisualEnhancer/);
+  assert.match(chrome, /内部资料 · 仅供研究参考 · 请勿外传/);
+  assert.match(legal, />法律资料声明</);
+  assert.match(css, /\.published-article-body[\s\S]*max-width:\s*776px/);
+  assert.match(css, /\.published-article-body[\s\S]*>\s*\*\s*\{[\s\S]*max-width:\s*720px/);
+  assert.doesNotMatch(home, /news-byline/);
 });

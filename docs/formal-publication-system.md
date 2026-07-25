@@ -16,6 +16,7 @@
 | 首页分类与筛选 | `components/home/ReportDirectory.tsx` | 正式首页 |
 | 报道入口与排序 | `content/published-reports.json` | 正式首页、静态路由 |
 | 正文内容 | `content/published/<slug>/content.json` | 对应的一篇报道 |
+| 跨报道人工决策 | `docs/framework-decision-log.md` | 后续框架修改与回归规则 |
 
 ## 页面形成过程
 
@@ -43,6 +44,8 @@
 7. 先部署到内部试读路径检查，确认后进入正式首页。
 
 不要为新文章复制导航栏、EOB 弹窗、法律声明、页脚或完整 HTML 框架。需要修改这些范式时，只修改对应共享组件并对全部报道做回归测试。
+
+跨两篇以上报道的版式或交互问题必须先记录到 `framework-decision-log.md`，再修改共享层并补充自动测试。聊天中的反馈只有完成这三个动作后，才算成为系统可以持续执行的经验。
 
 ## 当前兼容层的注意事项
 

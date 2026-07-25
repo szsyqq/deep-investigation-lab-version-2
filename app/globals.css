@@ -230,7 +230,6 @@ footer > a { color: var(--red); font-weight: 700; font-size: 13px; }
 .news-kicker { display: inline-block; color: #a02020; border-bottom: 1px solid #a02020; padding-bottom: 4px; font: 700 11px Arial, sans-serif; letter-spacing: .22em; }
 .news-lead h2 { max-width: 760px; margin: 18px 0; font: 700 clamp(38px, 5vw, 66px)/1.12 Georgia, "Songti SC", serif; letter-spacing: -.035em; }
 .news-deck { max-width: 760px; color: #4b4a47; font-size: 18px; line-height: 1.75; }
-.news-byline { margin-top: 25px; padding-top: 12px; border-top: 1px solid #c9c2b3; color: #6b6b6b; font-size: 11px; letter-spacing: .14em; }
 .news-preview-box { align-self: end; border-top: 4px solid #a02020; border-bottom: 1px solid #1a1a1a; padding: 20px 0 22px; }
 .news-preview-box > span { color: #a02020; font: 700 10px Arial, sans-serif; letter-spacing: .2em; }
 .news-preview-box h3 { margin: 12px 0; font: 700 25px/1.3 Georgia, "Songti SC", serif; }
@@ -367,7 +366,15 @@ footer > a { color: var(--red); font-weight: 700; font-size: 13px; }
 .article-sidenav a.active { color: #d6b564; }
 .article-sidenav small { display: block; margin-bottom: 4px; color: #8e877c; font: 9px Arial, sans-serif; letter-spacing: .12em; }
 .article-sidenav-mask { position: fixed; inset: 0; z-index: 9050; border: 0; background: rgba(0,0,0,.52); cursor: pointer; }
-.published-article-body { font-family: Georgia, "Times New Roman", "Songti SC", "SimSun", serif; }
+body { padding-top: 0 !important; }
+.published-article-body { width: 100% !important; max-width: 776px !important; margin: 0 auto !important; padding: 0 28px 80px !important; font-family: Georgia, "Times New Roman", "Songti SC", "SimSun", serif; }
+.published-article-body > * { width: 100%; max-width: 720px !important; margin-left: auto !important; margin-right: auto !important; }
+.published-article-body > .hero { display: none !important; }
+.published-article-body > p { margin-top: 0 !important; margin-bottom: 1.35em !important; color: #262521 !important; font: 18px/1.92 Georgia, "Songti SC", serif !important; text-align: justify; }
+.published-article-body > h2 { margin-top: 58px !important; margin-bottom: 24px !important; padding-top: 20px !important; border-top: 1px solid #c9c2b3 !important; font: 700 29px/1.38 Georgia, "Songti SC", serif !important; }
+.published-article-body .term { color: inherit !important; border: 0 !important; font-weight: inherit !important; cursor: text !important; }
+.published-article-body .term::before,.published-article-body .term::after { display: none !important; content: none !important; }
+.published-article-body .data-card { cursor: default !important; }
 .shared-legal-footer { width: 100%; max-width: 776px; margin: 30px auto 0; padding: 38px 28px 58px; border-top: 4px double #1a1a1a; display: grid; grid-template-columns: 1fr 1fr; gap: 50px; background: transparent; font-family: Georgia, "Songti SC", serif; }
 .shared-legal-footer div { display: block; }
 .shared-legal-footer b { color: #a02020; font-size: 13px; }
@@ -387,5 +394,8 @@ footer > a { color: var(--red); font-weight: 700; font-size: 13px; }
   .shared-article-hero { padding: 26px 18px 22px; }
   .shared-trial-notice { grid-template-columns: 1fr; }
   .shared-article-byline { align-items: start; flex-direction: column; gap: 4px; }
+  .published-article-body { padding: 0 18px 60px !important; }
+  .published-article-body > p { font-size: 17px !important; line-height: 1.86 !important; }
+  .published-article-body > h2 { font-size: 25px !important; }
   .shared-legal-footer { grid-template-columns: 1fr; gap: 24px; padding-inline: 18px; }
 }
