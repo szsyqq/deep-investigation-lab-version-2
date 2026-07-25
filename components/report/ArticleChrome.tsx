@@ -9,11 +9,13 @@ export default function ArticleChrome({ readingTime, chapters }: { readingTime: 
   const [open, setOpen] = useState(false);
   const [progress, setProgress] = useState(0);
   const [active, setActive] = useState(chapters[0]?.id ?? "");
+  const [compact, setCompact] = useState(false);
 
   useEffect(() => {
     function update() {
       const height = document.documentElement.scrollHeight - window.innerHeight;
       setProgress(height > 0 ? Math.min(100, (window.scrollY / height) * 100) : 0);
+      setCompact(window.scrollY > 72);
       let current = chapters[0]?.id ?? "";
       for (const chapter of chapters) {
         const element = document.getElementById(chapter.id);
@@ -29,11 +31,14 @@ export default function ArticleChrome({ readingTime, chapters }: { readingTime: 
   return (
     <>
       <div className="article-progress" style={{ width: `${progress}%` }} />
-      <header className="article-topbar">
-        <div><Link href="/">← 返回报道首页</Link><span>{readingTime}</span></div>
-        <div className="article-classification">● 内部资料 · 仅供研究参考 · 请勿外传</div>
-        <div><span>{chapters.find((chapter) => chapter.id === active)?.label || "导语"}</span><button type="button" onClick={() => setOpen(true)}>≡ 目录</button></div>
-      </header>
+      <div className={`article-chrome ${compact ? "is-compact" : ""}`}>
+        <div className="article-internal-banner">● 内部资料 · 仅供研究参考 · 请勿外传</div>
+        <header className="article-topbar">
+          <div><Link href="/">← 返回报道首页</Link><span>{readingTime}</span></div>
+          <div className="article-classification">● 内部资料 · 仅供研究参考 · 请勿外传</div>
+          <div><span>{chapters.find((chapter) => chapter.id === active)?.label || "导语"}</span><button type="button" onClick={() => setOpen(true)}>≡ 目录</button></div>
+        </header>
+      </div>
       <div className="article-masthead"><b>调查团队 · THE INVESTIGATION</b><span>深度调查档案室</span></div>
       <aside className={`article-sidenav ${open ? "open" : ""}`} aria-hidden={!open}>
         <button type="button" aria-label="关闭目录" onClick={() => setOpen(false)}>×</button>

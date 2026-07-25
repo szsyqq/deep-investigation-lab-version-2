@@ -69,7 +69,12 @@ test("legal notice and report shell are maintained as shared components", () => 
   assert.match(article, /LegalFooter/);
   assert.match(article, /LegacyVisualEnhancer/);
   assert.match(chrome, /内部资料 · 仅供研究参考 · 请勿外传/);
+  assert.match(chrome, /setCompact\(window\.scrollY > 72\)/);
+  assert.match(chrome, /article-internal-banner/);
+  assert.match(chrome, /article-chrome \$\{compact \? "is-compact"/);
   assert.match(legal, />法律资料声明</);
+  assert.match(css, /\.article-chrome\.is-compact \.article-topbar[\s\S]*background:\s*#a02020/);
+  assert.match(css, /\.article-chrome\.is-compact \.article-topbar button[\s\S]*background:\s*white/);
   assert.match(css, /\.published-article-body[\s\S]*max-width:\s*776px/);
   assert.match(css, /\.published-article-body[\s\S]*>\s*\*\s*\{[\s\S]*max-width:\s*720px/);
   assert.doesNotMatch(home, /news-byline/);
