@@ -10,6 +10,8 @@ export default function ArticleChrome({ readingTime, chapters }: { readingTime: 
   const [progress, setProgress] = useState(0);
   const [active, setActive] = useState(chapters[0]?.id ?? "");
   const [compact, setCompact] = useState(false);
+  const activeIndex = chapters.findIndex((chapter) => chapter.id === active);
+  const activeSequence = activeIndex <= 0 ? "导语" : `第 ${activeIndex} 节`;
 
   useEffect(() => {
     function update() {
@@ -32,11 +34,11 @@ export default function ArticleChrome({ readingTime, chapters }: { readingTime: 
     <>
       <div className="article-progress" style={{ width: `${progress}%` }} />
       <div className={`article-chrome ${compact ? "is-compact" : ""}`}>
-        <div className="article-internal-banner">● 内部资料 · 仅供研究参考 · 请勿外传</div>
+        <div className="article-internal-banner"><span>内部资料 · 仅供研究参考 · 请勿外传</span></div>
         <header className="article-topbar">
           <div><Link href="/">← 返回报道首页</Link><span>{readingTime}</span></div>
-          <div className="article-classification">● 内部资料 · 仅供研究参考 · 请勿外传</div>
-          <div><span>{chapters.find((chapter) => chapter.id === active)?.label || "导语"}</span><button type="button" onClick={() => setOpen(true)}>≡ 目录</button></div>
+          <div className="article-classification">内部资料 · 仅供研究参考 · 请勿外传</div>
+          <div><span>{activeSequence}</span><button type="button" onClick={() => setOpen(true)}>≡ 目录</button></div>
         </header>
       </div>
       <div className="article-masthead"><b>调查团队 · THE INVESTIGATION</b><span>深度调查档案室</span></div>
@@ -50,6 +52,14 @@ export default function ArticleChrome({ readingTime, chapters }: { readingTime: 
         ))}
       </aside>
       {open && <button className="article-sidenav-mask" type="button" aria-label="关闭目录" onClick={() => setOpen(false)} />}
+      <button
+        className={`article-back-top ${compact ? "visible" : ""}`}
+        type="button"
+        aria-label="返回页面顶部"
+        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+      >
+        ↑
+      </button>
     </>
   );
 }

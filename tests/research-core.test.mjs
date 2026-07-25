@@ -72,9 +72,15 @@ test("legal notice and report shell are maintained as shared components", () => 
   assert.match(chrome, /setCompact\(window\.scrollY > 72\)/);
   assert.match(chrome, /article-internal-banner/);
   assert.match(chrome, /article-chrome \$\{compact \? "is-compact"/);
+  assert.match(chrome, /activeSequence/);
+  assert.match(chrome, /article-back-top/);
+  assert.match(chrome, /window\.scrollTo\(\{ top: 0, behavior: "smooth" \}\)/);
+  assert.doesNotMatch(chrome, /● 内部资料/);
   assert.match(legal, />法律资料声明</);
   assert.match(css, /\.article-chrome\.is-compact \.article-topbar[\s\S]*background:\s*#a02020/);
   assert.match(css, /\.article-chrome\.is-compact \.article-topbar button[\s\S]*background:\s*white/);
+  assert.match(css, /\.article-chrome\.is-compact \.article-topbar > div:first-child span[\s\S]*display:\s*none/);
+  assert.match(css, /\.article-back-top\.visible[\s\S]*opacity:\s*\.92/);
   assert.match(css, /\.published-article-body[\s\S]*max-width:\s*776px/);
   assert.match(css, /\.published-article-body[\s\S]*>\s*\*\s*\{[\s\S]*max-width:\s*720px/);
   assert.doesNotMatch(home, /news-byline/);
