@@ -80,8 +80,12 @@ test("legal notice and report shell are maintained as shared components", () => 
   assert.match(css, /\.article-chrome\.is-compact \.article-topbar[\s\S]*background:\s*#a02020/);
   assert.match(css, /\.article-chrome\.is-compact \.article-topbar button[\s\S]*background:\s*white/);
   assert.match(css, /\.article-chrome\.is-compact \.article-topbar > div:first-child span[\s\S]*display:\s*none/);
+  assert.match(css, /\.article-internal-banner span\s*\{[^}]*padding:\s*2px 0;[^}]*\}/);
+  assert.doesNotMatch(css, /\.article-internal-banner span\s*\{[^}]*border:/);
+  assert.match(css, /\.article-chrome\.is-compact \.article-classification\s*\{[^}]*border:\s*1px/);
   assert.match(css, /\.article-back-top\.visible[\s\S]*opacity:\s*\.92/);
   assert.match(css, /\.published-article-body[\s\S]*max-width:\s*776px/);
   assert.match(css, /\.published-article-body[\s\S]*>\s*\*\s*\{[\s\S]*max-width:\s*720px/);
+  assert.match(css, /\.published-article-body > h2:first-child\s*\{[^}]*border-top:\s*0 !important/);
   assert.doesNotMatch(home, /news-byline/);
 });
