@@ -2,6 +2,9 @@
 
 Deep Investigation Lab V2 是一套面向 Codex 的结构化调查研究与发布系统。它把研究、编辑、视觉规划和网页渲染拆开，避免每篇文章重新生成网站，也避免一次修图破坏历史报告。
 
+- **公开网站**：https://szsyqq.github.io/deep-investigation-lab-version-2/
+- **操作手册**：https://szsyqq.github.io/deep-investigation-lab-version-2/manual/
+
 ## 直接使用
 
 在 Codex 中打开本仓库，然后直接说：
