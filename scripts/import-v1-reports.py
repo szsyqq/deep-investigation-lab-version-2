@@ -15,6 +15,24 @@ def clean_text(value: str) -> str:
     return html_lib.unescape(re.sub(r"\s+", " ", value)).strip()
 
 
+def remove_first_div_by_class(value: str, class_name: str) -> str:
+    opening = re.search(
+        rf'<div\b[^>]*class=["\'][^"\']*\b{re.escape(class_name)}\b[^"\']*["\'][^>]*>',
+        value,
+        flags=re.I,
+    )
+    if not opening:
+        return value
+    depth = 0
+    for token in re.finditer(r"</?div\b[^>]*>", value[opening.start():], flags=re.I):
+        tag = token.group(0)
+        depth += -1 if tag.lower().startswith("</div") else 1
+        if depth == 0:
+            end = opening.start() + token.end()
+            return (value[:opening.start()] + value[end:]).strip()
+    return value
+
+
 def main() -> None:
     if len(sys.argv) != 2:
         raise SystemExit("Usage: python scripts/import-v1-reports.py /path/to/V1")
@@ -48,9 +66,10 @@ def main() -> None:
         body = re.sub(r'<div class="disclaimer"[^>]*>[\s\S]*?</div>', "", body, flags=re.I)
         body = re.sub(r"<!--[\s\S]*?-->", "", body)
         body = re.sub(r"</div>\s*$", "", body, count=1)
+        body = remove_first_div_by_class(body, "hero")
         styles = "\n".join(re.findall(r"<style[^>]*>([\s\S]*?)</style>", raw, flags=re.I))
 
-        chapters = []
+        chapters = [{"id": "report-top", "label": "导语"}]
         for attrs, inner in re.findall(r"<h2\b([^>]*)>([\s\S]*?)</h2>", body, flags=re.I):
             match = re.search(r'\bid=["\']([^"\']+)["\']', attrs, flags=re.I)
             if match:

@@ -39,7 +39,7 @@ export default function ArticleChrome({ readingTime, chapters }: { readingTime: 
         <h2>章节导航</h2>
         {chapters.map((chapter, index) => (
           <a className={active === chapter.id ? "active" : ""} href={`#${chapter.id}`} key={chapter.id} onClick={() => setOpen(false)}>
-            <small>{index === 0 ? "导语" : `第 ${index} 节`}</small>{chapter.label}
+            <small>{chapter.id === "report-top" ? "导语" : `第 ${index} 节`}</small>{chapter.label}
           </a>
         ))}
       </aside>

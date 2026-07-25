@@ -44,8 +44,9 @@ test("published archive has a complete, isolated registry", () => {
     const contentPath = path.resolve("content/published", report.slug, "content.json");
     assert.ok(fs.existsSync(contentPath), `missing published package: ${report.slug}`);
     const content = JSON.parse(fs.readFileSync(contentPath, "utf8"));
-    assert.ok(content.articleHtml.includes("<h1"), `missing title: ${report.slug}`);
+    assert.equal(/<h1[\s>]/i.test(content.articleHtml), false, `legacy title leaked into body: ${report.slug}`);
     assert.ok(Array.isArray(content.chapters), `missing chapters: ${report.slug}`);
+    assert.deepEqual(content.chapters[0], { id: "report-top", label: "导语" });
     assert.equal(/<script[\s>]/i.test(content.articleHtml), false, `script leaked into article: ${report.slug}`);
     assert.equal(/consent-overlay/i.test(content.articleHtml), false, `legacy consent leaked into article: ${report.slug}`);
   }
@@ -57,4 +58,5 @@ test("legal notice and report shell are maintained as shared components", () => 
   assert.match(layout, /EobLegalNotice/);
   assert.match(article, /ArticleChrome/);
   assert.match(article, /LegalFooter/);
+  assert.match(article, /LegacyVisualEnhancer/);
 });
