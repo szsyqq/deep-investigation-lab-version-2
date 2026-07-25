@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Deep Investigation Lab V2",
-  description: "一套从研究分类、证据核查、视觉规划到网站发布的深度调查工作系统。",
+  title: "深度调查档案室 · The Investigative Desk",
+  description: "基于公开信息、事实核验与独立研究形成的深度报道档案室。",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

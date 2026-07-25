@@ -4,9 +4,13 @@ export default function AirbusReport() {
   return (
     <main className="report">
       <header className="report-header">
-        <Link href="/">DEEP INVESTIGATION LAB V2</Link>
+        <Link href="/preview">← 返回内部试读页</Link>
         <span>内部试读 · 示例研究包 · 尚未正式发布</span>
       </header>
+      <div className="report-masthead">
+        <b>调查团队 · THE INVESTIGATION</b>
+        <span>2026年7月25日 · 编辑部试读</span>
+      </div>
       <section className="report-hero">
         <span className="tag">主体研究 / 航空制造</span>
         <h1>订单堆成山，飞机为何交不出去？</h1>

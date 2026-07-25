@@ -4,6 +4,8 @@ Deep Investigation Lab V2 是一套面向 Codex 的完整报告生产系统。�
 
 - **公开网站**：https://szsyqq.github.io/deep-investigation-lab-version-2/
 - **操作手册**：https://szsyqq.github.io/deep-investigation-lab-version-2/manual/
+- **内部试读**：https://szsyqq.github.io/deep-investigation-lab-version-2/preview/
+- **系统说明**：https://szsyqq.github.io/deep-investigation-lab-version-2/system/
 - **产品技术报告**：[Markdown 源稿](docs/product-technical-report.md)
 - **排版版技术报告**：[Word 文档](deliverables/Deep_Investigation_Lab_V2_产品技术报告.docx)
 

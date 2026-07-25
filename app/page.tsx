@@ -1,130 +1,99 @@
 import Link from "next/link";
 
-const stages = [
-  ["01", "接收任务", "自动识别主体研究或话题研究，确认范围与反证条件。"],
-  ["02", "讨论与研究", "讨论团从读者、市场和反方视角提出问题，并反复补充调查。"],
-  ["03", "框架与底稿", "保存全部来源，形成论点、章节职责和完整报告框架。"],
-  ["04", "撰写初稿", "先完成一篇以文字为主、前后连贯、可以独立阅读的文章。"],
-  ["05", "视觉编辑", "从正文主张出发，增加真正降低理解成本的图表和解释。"],
-  ["06", "审核与修改", "检查相似性、事实和结构，并把分析师意见自然融入全文。"],
-  ["07", "预览与发布", "先进入内部试读，分析师明确批准后再发布到正式主页面。"],
-];
-
-const patterns = [
-  { name: "矛盾背离", use: "领先指标上升，结果指标恶化", form: "对照卡 + 因果链" },
-  { name: "因果传导", use: "事件经过多个环节影响结果", form: "Story Flow" },
-  { name: "竞争差距", use: "同口径比较两个以上对象", form: "镜像条 / 斜率图" },
-  { name: "阶段演化", use: "事件有明确转折与阶段", form: "带结论时间线" },
+const archiveReports = [
+  {
+    company: "腾讯控股",
+    tag: "互联网 · AI",
+    title: "腾讯：14亿人的围墙花园，与它挡不住的那道裂缝",
+    summary: "微信月活超过十四亿，腾讯仍是中国最赚钱的互联网公司之一。但流量、视频、国际化与人工智能投入之间的张力，正在重新定义它的下一阶段。",
+    time: "约 22 分钟",
+    href: "https://szsyqq.github.io/DeepInvestigationLab/reports/tencent/index.html",
+  },
+  {
+    company: "深度求索",
+    tag: "人工智能 · 开源",
+    title: "DeepSeek：把模型开源，把账本捂紧",
+    summary: "技术彻底打开，财务仍然关闭。模型效率、资本投入、商业化和估值之间，构成了这家公司最锋利的悖论。",
+    time: "约 18 分钟",
+    href: "https://szsyqq.github.io/DeepInvestigationLab/reports/deepseek/index.html",
+  },
+  {
+    company: "空中客车",
+    tag: "航空 · 供应链",
+    title: "空中客车：八千架飞机的赌注——产能马拉松与发动机之困",
+    summary: "创纪录订单簿与交付迟滞同时存在。发动机、供应链、诉讼和竞争格局，共同决定这家飞机制造商能否把需求兑现为现金。",
+    time: "约 25 分钟",
+    href: "https://szsyqq.github.io/DeepInvestigationLab/reports/airbus/index.html",
+  },
 ];
 
 export default function Home() {
   return (
-    <main>
-      <header className="site-header">
-        <Link className="brand" href="/">
-          <span className="brand-mark">D2</span>
-          <span>Deep Investigation Lab</span>
-        </Link>
-        <nav>
-          <a href="#workflow">研究流程</a>
-          <a href="#visuals">表达规范</a>
-          <Link href="/reports/airbus">示例报告</Link>
-          <Link href="/manual">操作手册</Link>
-          <Link className="nav-cta" href="/workbench">开始研究</Link>
-        </nav>
+    <main className="news-home">
+      <div className="news-ribbon">独立研究 · 公开资料 · 事实核验</div>
+      <header className="news-masthead">
+        <div className="news-utility">
+          <span>2026年7月25日 · 星期六</span>
+          <nav aria-label="辅助导航">
+            <Link href="/preview">内部试读</Link>
+            <Link href="/system">研究系统</Link>
+            <Link href="/manual">操作手册</Link>
+          </nav>
+        </div>
+        <div className="news-nameplate">
+          <span>THE INVESTIGATIVE DESK</span>
+          <h1>深度调查档案室</h1>
+          <p>Deep Investigation Lab</p>
+        </div>
+        <div className="news-sections">
+          <span>公司</span><span>产业</span><span>资本</span><span>政策</span><span>技术</span><span>社会议题</span>
+        </div>
       </header>
 
-      <section className="hero">
-        <div className="eyebrow">DEEP INVESTIGATION LAB · VERSION 2</div>
-        <h1>让调查研究成为<br /><em>可复用的系统</em></h1>
-        <p className="hero-copy">
-          从一句研究请求出发，自动识别研究类型，建立证据链，规划真正服务论点的视觉表达，
-          最终发布到一套不会被每篇文章重写的网站框架。
-        </p>
-        <div className="hero-actions">
-          <Link className="button primary" href="/workbench">创建研究任务</Link>
-          <Link className="button secondary" href="/reports/airbus">查看结构化报告</Link>
+      <section className="news-front">
+        <div className="news-lead">
+          <div className="news-kicker">编辑部说明</div>
+          <h2>让事实先于结论，<br />让调查成为可以复核的档案。</h2>
+          <p className="news-deck">这里发布基于公开文件、监管资料、公司披露与可交叉验证信息形成的深度报道。每篇文章先经过研究、完整写作、视觉编辑、事实审核和内部试读，再进入正式首页。</p>
+          <div className="news-byline">调查团队 · THE INVESTIGATION</div>
         </div>
-        <div className="hero-proof">
-          <span><b>2</b> 种研究路线</span>
-          <span><b>7</b> 个生产阶段</span>
-          <span><b>1</b> 套固定发布框架</span>
-        </div>
+        <aside className="news-preview-box">
+          <span>编辑部工作区</span>
+          <h3>未发布报告先在试读页审阅</h3>
+          <p>测试稿、待核实内容和分析师修改版本不会进入正式报道列表。确认无误后，才由内部试读转为正式发布。</p>
+          <Link href="/preview">进入内部试读页 →</Link>
+        </aside>
       </section>
 
-      <section className="statement">
-        <p>旧方式从一次搜索直接跳到网页。</p>
-        <h2>V2 保存研究、写作与修改的全过程。</h2>
-        <div className="flow">
-          <span>调查任务</span><i>→</i><span>反复研究</span><i>→</i><span>完整初稿</span><i>→</i><span>审核发布</span>
+      <section className="news-index">
+        <div className="news-index-heading">
+          <div><span>ARCHIVE SELECTION</span><h2>历史档案选读</h2></div>
+          <p>以下文章保留在第一版档案室，作为正式报道风格与内容深度的设计基准。</p>
         </div>
-      </section>
-
-      <section className="section" id="workflow">
-        <div className="section-heading">
-          <div><span className="kicker">REPORT PRODUCTION</span><h2>七阶段报告生产流程</h2></div>
-          <p>用户只需要提出任务和反馈。底层证据映射、版本状态和校验由系统处理。</p>
-        </div>
-        <div className="stage-grid">
-          {stages.map(([no, title, copy]) => (
-            <article className="stage-card" key={no}>
-              <span className="stage-no">{no}</span>
-              <h3>{title}</h3>
-              <p>{copy}</p>
-            </article>
+        <div className="news-report-list">
+          {archiveReports.map((report, index) => (
+            <a className="news-report-card" href={report.href} key={report.title}>
+              <div className="news-report-number">0{index + 1}</div>
+              <div className="news-report-copy">
+                <div className="news-report-meta"><b>{report.company}</b><span>{report.tag}</span></div>
+                <h3>{report.title}</h3>
+                <p>{report.summary}</p>
+                <div className="news-report-foot"><span>{report.time}阅读</span><b>阅读全文 →</b></div>
+              </div>
+            </a>
           ))}
         </div>
       </section>
 
-      <section className="dark-section" id="visuals">
-        <div className="section-heading">
-          <div><span className="kicker gold">EDITORIAL VISUALS</span><h2>图表不是装饰，是论证</h2></div>
-          <p>每个视觉模块必须回答一个问题：读者看完后，能更快理解哪项主张？</p>
-        </div>
-        <div className="pattern-list">
-          {patterns.map((pattern, index) => (
-            <div className="pattern-row" key={pattern.name}>
-              <span className="pattern-index">0{index + 1}</span>
-              <strong>{pattern.name}</strong>
-              <span>{pattern.use}</span>
-              <b>{pattern.form}</b>
-            </div>
-          ))}
-        </div>
-        <div className="prose-rule">
-          <span>关键规则</span>
-          <p>证据不足、关系不明确或视觉不能降低理解成本时，系统必须选择 <b>prose-only</b>，不强行画图。</p>
-        </div>
+      <section className="news-method-note">
+        <div><span>EDITORIAL STANDARD</span><h2>报道风格保持不变，生产系统退到幕后。</h2></div>
+        <p>网站正面呈现的是文章、事实与调查判断。研究流程、内部工具和操作说明保留在附加页面，不再占据主页面。</p>
+        <Link href="/system">查看研究与发布系统 →</Link>
       </section>
 
-      <section className="section system-section">
-        <div className="section-heading">
-          <div><span className="kicker">FIXED PUBLISHING SYSTEM</span><h2>网站只搭一次，文章持续生长</h2></div>
-        </div>
-        <div className="system-grid">
-          <div className="system-block fixed">
-            <span>固定层</span>
-            <h3>发布框架</h3>
-            <ul><li>导航与版式</li><li>图表组件</li><li>引用与脚注</li><li>移动端规则</li></ul>
-          </div>
-          <div className="system-arrow">+</div>
-          <div className="system-block variable">
-            <span>内容层</span>
-            <h3>研究包</h3>
-            <ul><li>讨论与研究笔记</li><li>来源与证据</li><li>完整初稿</li><li>审核与修改记录</li></ul>
-          </div>
-          <div className="system-arrow">=</div>
-          <div className="system-block result">
-            <span>输出层</span>
-            <h3>稳定报告</h3>
-            <ul><li>局部可修改</li><li>历史不受影响</li><li>来源可追溯</li><li>一键构建</li></ul>
-          </div>
-        </div>
-      </section>
-
-      <footer>
-        <div><b>Deep Investigation Lab V2</b><span>Research architecture for evidence-led reporting.</span></div>
-        <Link href="/manual">阅读操作手册 →</Link>
+      <footer className="news-footer">
+        <div><b>深度调查档案室</b><span>基于公开信息的独立研究与深度报道</span></div>
+        <div><Link href="/preview">内部试读</Link><Link href="/system">系统说明</Link><Link href="/manual">操作手册</Link></div>
       </footer>
     </main>
   );
