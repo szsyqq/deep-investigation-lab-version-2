@@ -49,17 +49,22 @@ export default function ReportDirectory({ reports }: { reports: Report[] }) {
           const index = reports.findIndex((item) => item.slug === report.slug);
           return (
             <Link className="news-report-card" href={report.href} key={report.slug}>
-              <div className="news-report-number">{String(index + 1).padStart(2, "0")}</div>
+              <div className="news-report-card-head">
+                <span className="news-report-category">{report.category}</span>
+                <span className="news-report-number">{String(index + 1).padStart(2, "0")}</span>
+              </div>
+              <div className="news-report-meta">
+                <b>{report.co}</b>
+                {report.trial && <span className="news-report-status">试读</span>}
+              </div>
               <div className="news-report-copy">
-                <div className="news-report-meta">
-                  <span className="news-report-category">{report.category}</span>
-                  <b>{report.co}</b>
-                  {report.trial && <span className="news-report-status">试读</span>}
-                  <div className="news-report-tags">{report.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
-                </div>
                 <h3>{report.title}</h3>
                 <p>{report.desc}</p>
-                <div className="news-report-foot"><span>发布于 {formatReportDate(report.date)} · {report.readingTime}</span><b>阅读全文 →</b></div>
+              </div>
+              <div className="news-report-tags">{report.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
+              <div className="news-report-foot">
+                <span>发布于 {formatReportDate(report.date)}<br />{report.readingTime}</span>
+                <b>阅读全文 <i aria-hidden="true">→</i></b>
               </div>
             </Link>
           );

@@ -4,6 +4,7 @@ import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
 import { classifyResearch, classifyRevision, createPackage, validatePackage, WORKFLOW_STAGES } from "../scripts/research-core.mjs";
+import { prepareArticleContent } from "../lib/article-content-contract.mjs";
 
 test("classifies entity and topic research", () => {
   assert.equal(classifyResearch("调查空客为什么交付下降"), "entity");
@@ -54,7 +55,28 @@ test("published archive has a complete, isolated registry", () => {
     assert.equal(/consent-overlay/i.test(content.articleHtml), false, `legacy consent leaked into article: ${report.slug}`);
     assert.equal(/\son[a-z]+\s*=/i.test(content.articleHtml), false, `inline interaction leaked into article: ${report.slug}`);
     assert.equal(/\sdata-(?:tip|detail)\s*=/i.test(content.articleHtml), false, `legacy tooltip leaked into article: ${report.slug}`);
+    const prepared = prepareArticleContent(content.articleHtml);
+    assert.match(prepared.bodyHtml, /<h2\b[^>]*>\s*<span class="chap-num">导语<\/span>/i, `intro convention missing: ${report.slug}`);
+    assert.match(prepared.bodyHtml, /<p\b[^>]*class=(["'])[^"']*\bdrop-cap\b[^"']*\1/i, `drop cap convention missing: ${report.slug}`);
+    assert.doesNotMatch(prepared.bodyHtml, /\bfootnotes\b|data-article-notes/i, `notes leaked into prose: ${report.slug}`);
+    assert.match(prepared.notesHtml, /\bfootnotes\b|data-article-notes/i, `shared notes missing: ${report.slug}`);
+    assert.match(prepared.notesHtml, /<h3>注释与资料来源<\/h3>/i, `notes title drifted: ${report.slug}`);
+    assert.match(prepared.notesHtml, /<li\b[^>]*id="fn1"/i, `notes numbering missing: ${report.slug}`);
+    if (/<sup\b[^>]*>\s*\[\d+\]/i.test(content.articleHtml)) {
+      assert.match(prepared.bodyHtml, /href="#fn\d+"/i, `citation link missing: ${report.slug}`);
+    }
   }
+});
+
+test("shared content contract renders epilogues and bidirectional notes", () => {
+  const prepared = prepareArticleContent('<h2>导言标题</h2><p>正文<sup>[1]</sup></p><h2>尾声：收束</h2><p>结尾</p><div class="footnotes"><h3>旧标题</h3><ol><li><sup>[1]</sup>资料</li></ol></div>');
+  assert.match(prepared.bodyHtml, /<section class="epilogue shared-epilogue reveal">/);
+  assert.match(prepared.bodyHtml, /<span class="chap-num">尾声<\/span>/);
+  assert.match(prepared.bodyHtml, /<p class="drop-cap reveal">/);
+  assert.match(prepared.bodyHtml, /id="fnref-1-1" href="#fn1"/);
+  assert.match(prepared.notesHtml, /<h3>注释与资料来源<\/h3>/);
+  assert.match(prepared.notesHtml, /id="fn1"/);
+  assert.match(prepared.notesHtml, /href="#fnref-1-1"/);
 });
 
 test("legal notice and report shell are maintained as shared components", () => {
@@ -68,6 +90,8 @@ test("legal notice and report shell are maintained as shared components", () => 
   assert.match(article, /ArticleChrome/);
   assert.match(article, /LegalFooter/);
   assert.match(article, /LegacyVisualEnhancer/);
+  assert.match(article, /prepareArticleContent/);
+  assert.match(article, /ArticleNotes/);
   assert.match(chrome, /内部资料 · 仅供研究参考 · 请勿外传/);
   assert.match(chrome, /setCompact\(window\.scrollY > 72\)/);
   assert.match(chrome, /article-internal-banner/);
@@ -87,5 +111,67 @@ test("legal notice and report shell are maintained as shared components", () => 
   assert.match(css, /\.published-article-body[\s\S]*max-width:\s*776px/);
   assert.match(css, /\.published-article-body[\s\S]*>\s*\*\s*\{[\s\S]*max-width:\s*720px/);
   assert.match(css, /\.published-article-body > h2:first-child\s*\{[^}]*border-top:\s*0 !important/);
+  assert.match(css, /\.published-article-body > \.chart-box\s*\{/);
+  assert.match(css, /\.published-article-body \.data-callout\s*\{[^}]*grid-template-columns:\s*repeat\(3/);
+  assert.match(css, /\.published-article-body > \.epilogue\s*\{[^}]*background:\s*#2a2520 !important/);
+  assert.match(css, /\.shared-article-notes ol\s*\{[^}]*list-style:\s*decimal/);
+  assert.match(css, /\.js \.published-article-body \.reveal\s*\{[^}]*opacity:\s*0/);
+  assert.match(css, /\.published-article-body \.research-bars\s*\{/);
+  assert.match(css, /prefers-reduced-motion:\s*reduce/);
   assert.doesNotMatch(home, /news-byline/);
+});
+
+test("internal previews are package-driven and use one shared renderer", () => {
+  const index = fs.readFileSync(path.resolve("app/preview/page.tsx"), "utf8");
+  const route = fs.readFileSync(path.resolve("app/preview/[slug]/page.tsx"), "utf8");
+  const loader = fs.readFileSync(path.resolve("lib/research-preview.ts"), "utf8");
+  const compiler = fs.readFileSync(path.resolve("lib/compile-research-report.ts"), "utf8");
+  const article = fs.readFileSync(path.resolve("components/report/PublishedArticle.tsx"), "utf8");
+  const chrome = fs.readFileSync(path.resolve("components/report/ArticleChrome.tsx"), "utf8");
+  const reviewPanel = fs.readFileSync(path.resolve("components/report/PreviewReviewPanel.tsx"), "utf8");
+  const css = fs.readFileSync(path.resolve("app/globals.css"), "utf8");
+  assert.match(index, /getPreviewPublications/);
+  assert.match(index, /report\.reportId/);
+  assert.doesNotMatch(index, /airbus-example/);
+  assert.match(route, /generateStaticParams/);
+  assert.match(route, /PublishedArticle/);
+  assert.match(route, /compileResearchReport/);
+  assert.match(loader, /internal-preview/);
+  assert.match(loader, /publication\.json/);
+  assert.match(loader, /draft\.md/);
+  assert.match(loader, /evidence-ledger\.json/);
+  assert.match(loader, /visual-plan\.json/);
+  assert.match(compiler, /articleHtml/);
+  assert.doesNotMatch(compiler, /drop-cap/);
+  assert.doesNotMatch(compiler, /class="footnotes"/);
+  assert.doesNotMatch(compiler, /class="chap-num"/);
+  assert.match(compiler, /articleNotesHtml/);
+  assert.match(compiler, /chart-box/);
+  assert.match(compiler, /story-graphic/);
+  assert.match(compiler, /data-h-pct/);
+  assert.match(compiler, /data-w/);
+  assert.match(compiler, /legacyStyles:\s*""/);
+  assert.match(compiler, /openQuestions:\s*report\.openQuestions/);
+  assert.doesNotMatch(compiler, /editorial-questions|试读后待确认/);
+  assert.match(article, /ArticleChrome/);
+  assert.match(article, /PreviewReviewPanel/);
+  assert.match(article, /report\.preview/);
+  assert.doesNotMatch(article, /shared-trial-notice/);
+  assert.doesNotMatch(chrome, /内部试读|试读列表|preview/);
+  assert.match(reviewPanel, /试读后需要确认的问题/);
+  assert.match(reviewPanel, /待确认判断、尚不确定的内容及可能存在的问题/);
+  assert.match(reviewPanel, /返回试读列表/);
+  assert.doesNotMatch(css, /research-preview-body|preview-chart|preview-open-questions/);
+});
+
+test("published directory uses one interactive card framework", () => {
+  const directory = fs.readFileSync(path.resolve("components/home/ReportDirectory.tsx"), "utf8");
+  const css = fs.readFileSync(path.resolve("app/globals.css"), "utf8");
+  assert.match(directory, /<Link className="news-report-card" href=\{report\.href\}/);
+  assert.match(directory, /news-report-card-head/);
+  assert.match(directory, /news-report-tags/);
+  assert.match(directory, /发布于 \{formatReportDate\(report\.date\)\}/);
+  assert.match(css, /\.news-report-list\s*\{[^}]*grid-template-columns:\s*repeat\(3/);
+  assert.match(css, /\.news-report-card:hover,\.news-report-card:focus-visible\s*\{[^}]*transform:\s*translateY\(-4px\)/);
+  assert.match(css, /@media \(max-width:\s*560px\)[\s\S]*\.news-report-list\s*\{[^}]*grid-template-columns:\s*1fr/);
 });

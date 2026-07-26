@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useLayoutEffect } from "react";
 
 function formatCount(value: number, target: number, source: string, suffix: string) {
   const decimals = String(target).includes(".") ? String(target).split(".")[1].length : 0;
@@ -13,7 +13,7 @@ function formatCount(value: number, target: number, source: string, suffix: stri
 }
 
 export default function LegacyVisualEnhancer() {
-  useEffect(() => {
+  useLayoutEffect(() => {
     const root = document.querySelector<HTMLElement>(".published-article-body");
     if (!root) return;
 
@@ -27,7 +27,10 @@ export default function LegacyVisualEnhancer() {
         observer.unobserve(entry.target);
       }
     }, { threshold: 0.06, rootMargin: "0px 0px -30px 0px" });
-    root.querySelectorAll(".reveal").forEach((element) => revealObserver.observe(element));
+    root.querySelectorAll<HTMLElement>(".reveal").forEach((element, index) => {
+      element.style.setProperty("--reveal-delay", `${Math.min(index % 4, 3) * 55}ms`);
+      revealObserver.observe(element);
+    });
     observers.push(revealObserver);
 
     const visualObserver = new IntersectionObserver((entries, observer) => {
@@ -36,11 +39,13 @@ export default function LegacyVisualEnhancer() {
         const element = entry.target as HTMLElement | SVGElement;
         const width = element.getAttribute("data-w");
         const height = element.getAttribute("data-h");
+        const heightPercent = element.getAttribute("data-h-pct");
         const dash = element.getAttribute("data-da");
         const offset = element.getAttribute("data-offset");
 
         if (width && element instanceof HTMLElement) element.style.width = `${width}%`;
         if (height && element instanceof HTMLElement) element.style.height = `${height}px`;
+        if (heightPercent && element instanceof HTMLElement) element.style.height = `${heightPercent}%`;
         if (dash && element instanceof SVGElement) {
           const current = element.getAttribute("stroke-dasharray")?.split(/\s+/)[1] || "515.22";
           element.setAttribute("stroke-dasharray", `${dash} ${current}`);
@@ -69,7 +74,7 @@ export default function LegacyVisualEnhancer() {
         observer.unobserve(element);
       }
     }, { threshold: 0.12 });
-    root.querySelectorAll("[data-w],[data-h],[data-da],[data-count]").forEach((element) => visualObserver.observe(element));
+    root.querySelectorAll("[data-w],[data-h],[data-h-pct],[data-da],[data-count]").forEach((element) => visualObserver.observe(element));
     root.querySelectorAll(".donut").forEach((element) => {
       const donutObserver = new IntersectionObserver((entries, observer) => {
         for (const entry of entries) {

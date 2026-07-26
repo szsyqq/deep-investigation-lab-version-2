@@ -1,0 +1,14 @@
+{
+  "schemaVersion": "2.0.0",
+  "reportId": "research-2026-07-25-1ckq68",
+  "items": [
+    {"id":"E1","kind":"primary-filing","title":"泡泡玛特2025年年度报告","publisher":"泡泡玛特国际集团 / 香港交易所","url":"https://prod-out-res.popmart.com/cms/ANNUAL_REPORT_2025_bd4e173872.pdf","publishedAt":"2026-04-21","accessedAt":"2026-07-26","summary":"审计财务、IP/品类/区域/渠道结构、会员、库存、现金、供应商与治理的核心来源。","confidence":"high"},
+    {"id":"E2","kind":"primary-filing","title":"泡泡玛特2024年年度业绩公告","publisher":"泡泡玛特国际集团 / 香港交易所","url":"https://www.hkexnews.hk/listedco/listconews/sehk/2025/0326/2025032600227.pdf","publishedAt":"2025-03-26","accessedAt":"2026-07-26","summary":"提供2024年完整业绩和2023年比较基准，用于识别2025年结构跃迁。","confidence":"high"},
+    {"id":"E3","kind":"primary-filing","title":"泡泡玛特2025年中期业绩公告","publisher":"泡泡玛特国际集团 / 香港交易所","url":"https://www.hkexnews.hk/listedco/listconews/sehk/2025/0819/2025081900626.pdf","publishedAt":"2025-08-19","accessedAt":"2026-07-26","summary":"上半年收入138.76亿元、同比增长204.4%，用于检查全年增长形成过程。","confidence":"high"},
+    {"id":"E4","kind":"primary-filing","title":"泡泡玛特2025年第三季度业务更新","publisher":"泡泡玛特国际集团 / 香港交易所","url":"https://www1.hkexnews.hk/listedco/listconews/sehk/2025/1021/2025102100236.pdf","publishedAt":"2025-10-21","accessedAt":"2026-07-26","summary":"未经审计：第三季度收入同比增长245%—250%，海外增长365%—370%，美洲增长1,265%—1,270%。","confidence":"high"},
+    {"id":"E5","kind":"regulation","title":"盲盒经营行为规范指引（试行）","publisher":"国家市场监督管理总局","url":"https://www.samr.gov.cn/zw/zfxxgk/fdzdgknr/zfjcs/art/2023/art_e2facd76a7fb4e90b03912cffb5e7d53.html","publishedAt":"2023-06-15","accessedAt":"2026-07-26","summary":"要求明示抽取规则和概率、保存记录、保护未成年人，并禁止后台操纵和诱导消费。","confidence":"high"},
+    {"id":"E6","kind":"regulatory-alert","title":"CPSC Issues Urgent Safety Warning to Labubu Collectors","publisher":"U.S. Consumer Product Safety Commission","url":"https://www.cpsc.gov/Recalls/2025/Consumer-Safety-Alert-CPSC-Issues-Urgent-Safety-Warning-to-Labubu-Collectors","publishedAt":"2025-08-18","accessedAt":"2026-07-26","summary":"警告仿冒LABUBU（Lafufu）可能造成窒息危险，并说明正品认证标识；对象不是泡泡玛特正品。","confidence":"high"},
+    {"id":"E7","kind":"primary-filing","title":"泡泡玛特2025年销量业务更新","publisher":"泡泡玛特国际集团 / 香港交易所","url":"https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0209/2026020901220.pdf","publishedAt":"2026-02-09","accessedAt":"2026-07-26","summary":"公司称2025年全IP全品类销量超过4亿件，THE MONSTERS超过1亿件。","confidence":"high"},
+    {"id":"E8","kind":"primary-filing","title":"泡泡玛特2026年第一季度业务更新","publisher":"泡泡玛特国际集团 / 香港交易所","url":"https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0512/2026051200579.pdf","publishedAt":"2026-05-12","accessedAt":"2026-07-26","summary":"未经审计：一季度收入同比增长75%—80%；中国100%—105%、亚太25%—30%、美洲55%—60%、欧洲及其他60%—65%。","confidence":"high"}
+  ]
+}

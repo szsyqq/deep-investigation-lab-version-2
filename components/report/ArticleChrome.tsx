@@ -37,7 +37,7 @@ export default function ArticleChrome({ readingTime, chapters }: { readingTime: 
         <div className="article-internal-banner"><span>内部资料 · 仅供研究参考 · 请勿外传</span></div>
         <header className="article-topbar">
           <div><Link href="/">← 返回报道首页</Link><span>{readingTime}</span></div>
-          <div className="article-classification">内部资料 · 仅供研究参考 · 请勿外传</div>
+          <div className="article-classification">深度调查档案室</div>
           <div><span>{activeSequence}</span><button type="button" onClick={() => setOpen(true)}>≡ 目录</button></div>
         </header>
       </div>

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": "2.0.0",
+  "reportId": "research-2026-07-25-1ckq68",
+  "currentStage": "review-revision",
+  "stages": [
+    {
+      "id": "intake",
+      "status": "completed"
+    },
+    {
+      "id": "discussion-research",
+      "status": "completed"
+    },
+    {
+      "id": "outline-sources",
+      "status": "completed"
+    },
+    {
+      "id": "drafting",
+      "status": "completed"
+    },
+    {
+      "id": "visual-editing",
+      "status": "completed"
+    },
+    {
+      "id": "review-revision",
+      "status": "in-progress"
+    },
+    {
+      "id": "preview-publication",
+      "status": "pending"
+    }
+  ],
+  "researchLoops": [
+    {
+      "round": 1,
+      "finding": "2025年收入与利润率同时跃迁，但IP和品类集中度上升。",
+      "nextQuestion": "增长由哪些运营机制共同驱动？",
+      "status": "completed"
+    },
+    {
+      "round": 2,
+      "finding": "艺术家IP、品类迁移、直营渠道、会员数据与柔性供应链构成反馈闭环。",
+      "nextQuestion": "全球放大给资产负债表和治理带来什么代价？",
+      "status": "completed"
+    },
+    {
+      "round": 3,
+      "finding": "库存周转恶化、供应商集中、监管与仿冒治理构成反证。",
+      "nextQuestion": "增长能否在2026年高基数上延续？",
+      "status": "completed"
+    },
+    {
+      "round": 4,
+      "finding": "2026年一季度收入仍增长75%—80%，但缺少利润、库存和IP结构数据。",
+      "nextQuestion": "等待中报验证平台化质量。",
+      "status": "completed"
+    }
+  ],
+  "analystApproval": {
+    "status": "pending",
+    "approvedAt": null,
+    "note": "内部预览完成；正式发布等待分析师明确批准。"
+  },
+  "visibility": "internal",
+  "updatedAt": "2026-07-26T06:19:54.860Z"
+}

@@ -2,6 +2,9 @@ import ArticleChrome from "./ArticleChrome";
 import LegacyVisualEnhancer from "./LegacyVisualEnhancer";
 import LegalFooter from "../legal/LegalFooter";
 import { formatReportDate } from "../../lib/format-report-date";
+import { prepareArticleContent } from "../../lib/article-content-contract.mjs";
+import ArticleNotes from "./ArticleNotes";
+import PreviewReviewPanel from "./PreviewReviewPanel";
 
 type Report = {
   title: string;
@@ -15,20 +18,17 @@ type Report = {
   articleHtml: string;
   legacyStyles: string;
   chapters: { id: string; label: string }[];
+  preview?: boolean;
+  openQuestions?: string[];
 };
 
 export default function PublishedArticle({ report }: { report: Report }) {
+  const content = prepareArticleContent(report.articleHtml);
   return (
     <main className="published-article">
       <style dangerouslySetInnerHTML={{ __html: report.legacyStyles }} />
       <ArticleChrome readingTime={report.readingTime} chapters={report.chapters} />
       <header className="shared-article-hero" id="report-top">
-        {report.trial && (
-          <div className="shared-trial-notice">
-            <b>试读</b>
-            <span>本文仍处于试读阶段，框架和部分判断可能尚未完成分析师最终审阅，仅供参考。</span>
-          </div>
-        )}
         <div className="shared-article-tags">
           <b>{report.category}</b>
           <span>{report.co}</span>
@@ -38,7 +38,9 @@ export default function PublishedArticle({ report }: { report: Report }) {
         <p>{report.desc}</p>
         <div className="shared-article-byline"><b>调查团队</b><span>{formatReportDate(report.date)} · {report.readingTime}</span></div>
       </header>
-      <article className="published-article-body" dangerouslySetInnerHTML={{ __html: report.articleHtml }} />
+      {report.preview && <PreviewReviewPanel questions={report.openQuestions ?? []} />}
+      <article className="published-article-body" dangerouslySetInnerHTML={{ __html: content.bodyHtml }} />
+      <ArticleNotes html={content.notesHtml} />
       <LegacyVisualEnhancer />
       <LegalFooter />
     </main>

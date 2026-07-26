@@ -1,0 +1,23 @@
+{
+  "schemaVersion": "2.0.0",
+  "reportId": "research-2026-07-25-1ckq68",
+  "approvedSections": [],
+  "lockedFacts": [],
+  "openQuestions": [
+    "分析师是否接受“已经越过盲盒，但尚未完成平台化证明”的主论点？",
+    "2026年中报能否证明非THE MONSTERS IP增长与库存周转改善？",
+    "是否需要追加创作者、供应商和海外消费者一手访谈？"
+  ],
+  "decisions": [
+    {"id":"D1","action":"route","from":"topic","to":"entity","reason":"最终研究对象是明确公司主体，脚手架中文识别结果已纠正。"},
+    {"id":"D2","action":"frame","from":"公司发展史","to":"平台能力与爆款周期的张力","reason":"该框架能同时解释增长机制和反证。"},
+    {"id":"D3","action":"qualify","from":"LABUBU产品安全问题","to":"仿冒品治理与品牌外溢风险","reason":"CPSC警告明确针对仿冒品，不能归因于正品。"},
+    {"id":"D4","problem":"成稿缺少独立尾声，且内部预览状态没有真实可访问页面。","aiSuggestion":"补写回应核心矛盾的尾声，并建立所有内部预览研究包共用的动态试读路由。","humanAction":"accept","finalChoice":"新增“一个角色离开盒子之后”作为尾声；内部预览包自动进入试读列表。","reason":"尾声需要完成叙事收束；预览必须是工作流中的真实交付物而非仅修改状态字段。","affectedPattern":"文章收束 / 共享预览渲染器","date":"2026-07-26"},
+    {"id":"D5","problem":"第二阶段完整预览被错误降级为纯Markdown页面：导言短、首字样式缺失、引用不规范、图表未渲染、试读标注重复。","aiSuggestion":"把证据、视觉计划、正文和发布结构组装为接近正式成品的编辑预览。","humanAction":"accept","finalChoice":"完整预览必须包含成稿导言、单一试读标识、首字下沉、读者脚注、来源列表和全部已批准视觉。","reason":"分析师审阅的是完整阅读体验，而不是研究工作文件的浏览器投影。","affectedPattern":"完整编辑预览 / 引用与视觉组装","date":"2026-07-26"},
+    {"id":"D6","problem":"预览仍使用新建的独立文章框架，与历史已发布报道的版式合同分叉。","aiSuggestion":"撤除预览专属渲染器，让研究包编译后直接进入原有PublishedArticle链路。","humanAction":"accept","finalChoice":"试读与发布共享唯一文章框架；状态只改变顶部文字和返回入口。","reason":"统一框架必须控制文字宽度、空行、章节、脚注、图表和页脚，不能按报告或状态重新发明。","affectedPattern":"统一输出框架","date":"2026-07-26"},
+    {"id":"D7","problem":"图表只做节点检查导致异常未被发现；尾声未进入深色容器；文末注释缺少编号和可用链接。","aiSuggestion":"将视觉尺寸检查、尾声语义渲染和双向脚注链接纳入共享内容合同。","humanAction":"accept","finalChoice":"尾声统一深色底白字；文末统一命名为“注释与资料来源”并显示连续编号；正文引用与注释双向可跳转；反馈闭环图改用弹性布局。","reason":"这些是所有文章的阅读合同，不能依赖单篇 HTML 或仅以节点存在作为验收。","affectedPattern":"视觉验收 / 尾声 / 注释与引用","date":"2026-07-26"},
+    {"id":"D8","problem":"新预览复用了共享观察器，却没有完整继承历史报道的文字渐入和图表生长动画；视觉CSS仍残留在编译器。","aiSuggestion":"把 reveal 语义、动画数据接口和四类研究图表样式全部归入共享框架。","humanAction":"accept","finalChoice":"正文与视觉统一滚动渐入；柱形宽高在进入视口后生长；视觉布局从编译器移入共享样式，并支持减少动画偏好。","reason":"动画与布局都是报道阅读框架的一部分，不应由单篇内容或编译产物决定。","affectedPattern":"共享动画合同 / 视觉组件样式","date":"2026-07-26"},
+    {"id":"D9","problem":"试读状态和待确认问题分散在顶部导航与正文末尾，使试读页面仍存在专属渲染分支。","aiSuggestion":"把全部试读差异集中到正文顶部唯一审阅框，其余页面完全复用正式报道。","humanAction":"accept","finalChoice":"标题区之后显示统一试读审阅框，集中列出待确认判断、不确定项和潜在问题；导航、正文、图表、注释与页脚全部按正式报道渲染。","reason":"试读是正式成品上的编辑批注层，不是另一种文章模板。","affectedPattern":"试读审阅框 / 正式报道同构","date":"2026-07-26"},
+    {"id":"D10","problem":"试读框架确认后，需要进入分析师与成稿交互修改阶段。","aiSuggestion":"保留当前内部预览作为对照基线，将工作流切回 review-revision；逐条意见先分类再修改。","humanAction":"accept","finalChoice":"当前阶段设为 review-revision/in-progress，preview-publication 返回 pending；publication 继续保持 internal-preview，分析师批准仍为 pending。","reason":"允许多轮修改和预览对照，同时防止修改过程被误认为批准或正式发布。","affectedPattern":"分析师审阅与修改流程","date":"2026-07-26"}
+  ]
+}
