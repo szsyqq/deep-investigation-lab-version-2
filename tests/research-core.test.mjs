@@ -171,7 +171,9 @@ test("published directory uses one interactive card framework", () => {
   assert.match(directory, /news-report-card-head/);
   assert.match(directory, /news-report-tags/);
   assert.match(directory, /发布于 \{formatReportDate\(report\.date\)\}/);
-  assert.match(css, /\.news-report-list\s*\{[^}]*grid-template-columns:\s*repeat\(3/);
+  assert.match(css, /\.news-report-list\s*\{[^}]*grid-template-columns:\s*1fr/);
+  assert.match(css, /\.news-report-card\s*\{[^}]*grid-template-columns:\s*105px minmax\(0,1fr\) 165px/);
   assert.match(css, /\.news-report-card:hover,\.news-report-card:focus-visible\s*\{[^}]*transform:\s*translateY\(-4px\)/);
-  assert.match(css, /@media \(max-width:\s*560px\)[\s\S]*\.news-report-list\s*\{[^}]*grid-template-columns:\s*1fr/);
+  assert.match(css, /\.preview-card:hover,\.preview-card:focus-visible\s*\{[^}]*transform:\s*translateY\(-4px\)/);
+  assert.match(css, /@media \(max-width:\s*560px\)[\s\S]*\.news-report-card\s*\{[^}]*grid-template-columns:\s*1fr/);
 });
