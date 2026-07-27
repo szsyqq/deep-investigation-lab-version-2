@@ -1,0 +1,9 @@
+{
+  "schemaVersion": "2.0.0",
+  "reportId": "research-2026-07-27-zhongji-xuchuang",
+  "items": [
+    {"id":"E1","kind":"source-manuscript","title":"指定 article.json 注释[8]：2023—2025年收入与净利润","publisher":"用户提供的中际旭创文章底稿","url":"","publishedAt":"2026-07-27","accessedAt":"2026-07-27","summary":"图表V1直接采用原文注释[8]的收入与净利润序列；净利率为两者相除后的展示性计算。","confidence":"as-supplied"},
+    {"id":"E2","kind":"source-manuscript","title":"指定 article.json 注释[11]—[16]：供应链与客户集中度","publisher":"用户提供的中际旭创文章底稿","url":"","publishedAt":"2026-07-27","accessedAt":"2026-07-27","summary":"图表V2直接使用原文对EML、预付款、客户集中度和境外收入的陈述。","confidence":"as-supplied"},
+    {"id":"E3","kind":"source-manuscript","title":"指定 article.json 注释[3]、[18]、[19]：辟谣和港股发行窗口","publisher":"用户提供的中际旭创文章底稿","url":"","publishedAt":"2026-07-27","accessedAt":"2026-07-27","summary":"图表V3只排列原文列出的辟谣日期、电话会与H股发行窗口，不归因传闻来源或股价动机。","confidence":"as-supplied"}
+  ]
+}

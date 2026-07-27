@@ -5,6 +5,8 @@ import { compileResearchReport } from "../../../lib/compile-research-report";
 import { getPreviewReport, getPreviewSlugs } from "../../../lib/research-preview";
 
 export const dynamic = "force-static";
+// Pages is a static export: only report packages enumerated at build time may
+// resolve. Local development is restarted after a new preview package is made.
 export const dynamicParams = false;
 
 export function generateStaticParams() {

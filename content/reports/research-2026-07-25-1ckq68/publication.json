@@ -1,19 +1,128 @@
 {
   "schemaVersion": "2.0.0",
   "reportId": "research-2026-07-25-1ckq68",
-  "title": "泡泡玛特越过盲盒之后",
-  "deck": "它已经证明能把艺术家角色工业化、全球化；尚未证明的是，这台机器能否低波动地持续复制爆款。",
-  "sections": [
-    {"id":"opening","title":"导言：一只小怪物如何改写一家公司","sectionPurpose":"从角色全球化切入，建立平台能力与爆款周期的核心矛盾","claimIds":["C1","C2"],"visualIds":["V1"]},
-    {"id":"format-shift","title":"增长的发动机，先换了商品形态","sectionPurpose":"解释毛绒品类如何扩大角色使用场景","claimIds":["C2"],"visualIds":["V2"]},
-    {"id":"loop","title":"公司卖的不是神秘，而是缩短试错","sectionPurpose":"拆解IP运营反馈闭环","claimIds":["C3"],"visualIds":["V3"]},
-    {"id":"globalization","title":"全球化抬高毛利，也抬高库存","sectionPurpose":"并置增长质量与运营代价","claimIds":["C4"],"visualIds":["V4"]},
-    {"id":"moat-risk","title":"护城河与风险来自同一个系统","sectionPurpose":"评估集中度、供应链、监管与仿冒治理","claimIds":["C5"],"visualIds":[]},
-    {"id":"scorecard","title":"下一张成绩单，不应只看收入","sectionPurpose":"提出可证伪的后续观察指标","claimIds":["C6","C7"],"visualIds":[]},
-    {"id":"epilogue","title":"尾声：一个角色离开盒子之后","sectionPurpose":"回到角色生命周期与中国IP工业能力的长期命题","claimIds":["C8"],"visualIds":[]}
+  "title": "泡泡玛特：塑料玩具里的千亿帝国",
+  "company": "泡泡玛特",
+  "category": "公司",
+  "tags": [
+    "IP运营",
+    "潮流消费",
+    "全球化"
   ],
-  "sources": ["E1","E2","E3","E4","E5","E6","E7","E8"],
+  "deck": "2025年6月，一只薄荷色Labubu雕塑以108万元成交。同一天，这个系列的隐藏款“本我”在二手市场报价4522元——而它的官方售价是99元。六个月后，同一款“本我”跌到540元，跌了88%。稀缺溢价在消退，但141亿的年营收、35%的净利率、段永平的百亿持仓，又让市场无法简单地说“泡泡破了”。如果LABUBU不再稀缺，泡泡玛特的2143亿港元市值还剩下什么？",
+  "sourceJsonPath": "sources/notes/article.json",
+  "jsonChartPlacements": {
+    "01": [
+      "V7",
+      "V8"
+    ],
+    "02": [
+      "V1",
+      "V2",
+      "V4"
+    ],
+    "03": [
+      "V5"
+    ],
+    "04": [],
+    "05": [],
+    "06": [
+      "V6"
+    ]
+  },
+  "sections": [
+    {
+      "id": "lead",
+      "title": "导语：一只Labubu的全球征途",
+      "sectionPurpose": "直接解析原始 JSON 导语",
+      "claimIds": [],
+      "visualIds": []
+    },
+    {
+      "id": "01",
+      "title": "稀缺去哪儿了",
+      "sectionPurpose": "直接解析原始 JSON 第一章",
+      "claimIds": [],
+      "visualIds": [
+        "V7",
+        "V8"
+      ]
+    },
+    {
+      "id": "02",
+      "title": "两个泡泡玛特",
+      "sectionPurpose": "直接解析原始 JSON 第二章",
+      "claimIds": [],
+      "visualIds": [
+        "V1",
+        "V2",
+        "V4"
+      ]
+    },
+    {
+      "id": "03",
+      "title": "段永平的选择",
+      "sectionPurpose": "直接解析原始 JSON 第三章",
+      "claimIds": [],
+      "visualIds": [
+        "V5"
+      ]
+    },
+    {
+      "id": "04",
+      "title": "全球化的代价",
+      "sectionPurpose": "直接解析原始 JSON 第四章",
+      "claimIds": [],
+      "visualIds": []
+    },
+    {
+      "id": "05",
+      "title": "商品先行，故事随后",
+      "sectionPurpose": "直接解析原始 JSON 第五章",
+      "claimIds": [],
+      "visualIds": []
+    },
+    {
+      "id": "06",
+      "title": "三种IP生意",
+      "sectionPurpose": "直接解析原始 JSON 第六章",
+      "claimIds": [],
+      "visualIds": [
+        "V6"
+      ]
+    },
+    {
+      "id": "epilogue",
+      "title": "尾声：稀缺之外",
+      "sectionPurpose": "直接解析原始 JSON 尾声",
+      "claimIds": [],
+      "visualIds": []
+    }
+  ],
+  "sources": [
+    "E1",
+    "E6",
+    "E8",
+    "E9",
+    "E10",
+    "E11",
+    "E12",
+    "E13",
+    "E14",
+    "E15",
+    "E16",
+    "E17",
+    "E18",
+    "E19",
+    "E20",
+    "E21",
+    "E22",
+    "E23",
+    "E24",
+    "E25",
+    "E26"
+  ],
   "status": "internal-preview",
-  "previewLabel": "内部试读 · 资料截至2026年7月26日",
+  "previewLabel": "内部试读 · 主稿按指定 JSON 原文直解析 · 已加入图表",
   "publishedAt": null
 }

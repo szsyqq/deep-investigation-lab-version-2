@@ -1,0 +1,74 @@
+{
+  "schemaVersion": "1.0.0",
+  "versionId": "2026-07-26T14-00-39-807Z--label-第三版-两组矛盾与长期利润检验",
+  "label": "--label=第三版-两组矛盾与长期利润检验",
+  "createdAt": "2026-07-26T14:00:39.807Z",
+  "files": [
+    {
+      "path": "brief.json",
+      "sha256": "c521a17b5b8325239297e157a0c3d59439d377e12b8edc6aac78a69567bd51dd",
+      "bytes": 2142
+    },
+    {
+      "path": "claim-map.json",
+      "sha256": "4c57d4bb0cce9b435c7672d91ab27e2a5be0fc67a2ef246698fddbb16a46b2ba",
+      "bytes": 5177
+    },
+    {
+      "path": "discussion.md",
+      "sha256": "be39629e5853dd8e5a871ae073e2601b9e4258045bebe27e45e69f06cdb48169",
+      "bytes": 12315
+    },
+    {
+      "path": "draft.md",
+      "sha256": "61e8110bed47459309ae5420c8ddd0e12cf4c3335b0dbe6addad71533e50edd8",
+      "bytes": 23476
+    },
+    {
+      "path": "editorial-state.json",
+      "sha256": "4e1fe1ec131c2b1cce9a1f31007c17014316086ccde3b03ea97b1ab522a36f1e",
+      "bytes": 11597
+    },
+    {
+      "path": "evidence-ledger.json",
+      "sha256": "4fec3634afaa8a682e6d0140c96e82fd4a2a89d07f02e2a2528fe5b8b4875352",
+      "bytes": 10718
+    },
+    {
+      "path": "outline.md",
+      "sha256": "3d1157596667ec0b68c1def0fce869f2c6e34231c9f3c2bb91700f3f088aadd3",
+      "bytes": 5429
+    },
+    {
+      "path": "publication.json",
+      "sha256": "b7b7f666da51e1f969b418c5cf3355d48965065bfe242671868c12f982ef0353",
+      "bytes": 2726
+    },
+    {
+      "path": "research-notes.md",
+      "sha256": "21b5ae658cd4a6a32d6b88a55051d12f9d4f04e2c9cb4b3adc3d868bda7486e0",
+      "bytes": 11796
+    },
+    {
+      "path": "review.md",
+      "sha256": "79743139ad720312bb5f294296eae706d9b44d50342964845beffb817c88e6f7",
+      "bytes": 3686
+    },
+    {
+      "path": "revisions.md",
+      "sha256": "a5a8f3cb7ad0bffcaf4d1f4d9c98724b96aa5dc37e5d764b24fb494fc45950c9",
+      "bytes": 9892
+    },
+    {
+      "path": "visual-plan.json",
+      "sha256": "eae9cb9375758be1da09cfdf90f1361f19b1babb9595489675f6b2663ef29a92",
+      "bytes": 3745
+    },
+    {
+      "path": "workflow-state.json",
+      "sha256": "0054c184553d1f89bc6a5337c73ade6c97e447ff639bde39e162afaacb076c80",
+      "bytes": 4695
+    }
+  ],
+  "restorePolicy": "Only listed files are overwritten; sources, working-drafts and other versions are preserved."
+}

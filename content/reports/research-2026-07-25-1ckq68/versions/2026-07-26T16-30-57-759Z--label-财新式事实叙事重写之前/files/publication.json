@@ -1,0 +1,22 @@
+{
+  "schemaVersion": "2.0.0",
+  "reportId": "research-2026-07-25-1ckq68",
+  "title": "稀缺之后：泡泡玛特的第二场考试",
+  "deck": "一只原价约50元的LABUBU，在拍卖场被推高到108万元；九个月后，泡泡玛特交出371.20亿元收入和130.12亿元净利润，股价却在财报发布后大跌。二手溢价回落、公司扩充产能之际，段永平反向将持股提高至7.65%，并称十年内大概率不会卖。这两种定价，押注的是同一件事：消费者买下的究竟是角色，还是稀缺本身？",
+  "sections": [
+    {"id": "opening", "title": "序言：稀缺的价格", "sectionPurpose": "在标题下方引言之后，用拍卖、股价与股东变化展开稀缺和持续性的矛盾", "claimIds": ["C1", "C3"], "visualIds": []},
+    {"id": "duan", "title": "段永平为什么改了主意", "sectionPurpose": "还原从看不懂到期权建仓、持续增持和长期利润假设的完整逻辑", "claimIds": ["C3"], "visualIds": []},
+    {"id": "scarcity", "title": "稀缺性退潮后的第一次考验", "sectionPurpose": "拆开二手价格、供给和终端需求", "claimIds": ["C1", "C2"], "visualIds": []},
+    {"id": "history", "title": "从零售货架到IP控制权", "sectionPurpose": "以三次身份转变讲述公司成长史", "claimIds": ["C4"], "visualIds": []},
+    {"id": "annual-report", "title": "年报里的两家公司", "sectionPurpose": "并置真实消费基础和超级IP集中度", "claimIds": ["C5", "C6"], "visualIds": ["V1", "V2"]},
+    {"id": "middle-east", "title": "中东冲击如何进入一家玩具公司的利润表", "sectionPurpose": "解释全球事件到成本、库存和毛利率的传导", "claimIds": ["C7", "C8"], "visualIds": ["V4", "V3"]},
+    {"id": "content", "title": "商品先行，故事随后", "sectionPurpose": "评估电影、乐园和内容化战略", "claimIds": ["C9"], "visualIds": []},
+    {"id": "peers", "title": "三种IP生意", "sectionPurpose": "比较泡泡玛特、Sanrio与TOP TOY的价值链位置", "claimIds": ["C10"], "visualIds": []},
+    {"id": "scorecard", "title": "长期利润的四项检验", "sectionPurpose": "检验2025年利润能否成为长期平均水平所依赖的四项经营假设", "claimIds": ["C11"], "visualIds": []},
+    {"id": "epilogue", "title": "尾声：稀缺之外", "sectionPurpose": "回到供给正常化后的角色寿命", "claimIds": ["C11"], "visualIds": []}
+  ],
+  "sources": ["E1", "E6", "E8", "E9", "E10", "E11", "E12", "E13", "E14", "E15", "E16", "E17", "E18", "E19", "E20", "E21", "E22", "E23", "E24", "E25"],
+  "status": "internal-preview",
+  "previewLabel": "内部试读 · 结构性重写第二版 · 资料截至2026年7月26日",
+  "publishedAt": null
+}

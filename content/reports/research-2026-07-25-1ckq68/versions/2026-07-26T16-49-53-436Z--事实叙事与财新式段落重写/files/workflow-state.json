@@ -1,0 +1,140 @@
+{
+  "schemaVersion": "2.0.0",
+  "reportId": "research-2026-07-25-1ckq68",
+  "currentStage": "review-revision",
+  "stages": [
+    {
+      "id": "intake",
+      "status": "completed"
+    },
+    {
+      "id": "discussion-research",
+      "status": "completed"
+    },
+    {
+      "id": "outline-sources",
+      "status": "completed"
+    },
+    {
+      "id": "drafting",
+      "status": "completed"
+    },
+    {
+      "id": "visual-editing",
+      "status": "completed"
+    },
+    {
+      "id": "review-revision",
+      "status": "in-progress"
+    },
+    {
+      "id": "preview-publication",
+      "status": "pending"
+    }
+  ],
+  "researchLoops": [
+    {
+      "round": 1,
+      "finding": "2025年收入与利润率同时跃迁，但IP和品类集中度上升。",
+      "nextQuestion": "增长由哪些运营机制共同驱动？",
+      "status": "completed"
+    },
+    {
+      "round": 2,
+      "finding": "艺术家IP、品类迁移、直营渠道、会员数据与柔性供应链构成反馈闭环。",
+      "nextQuestion": "全球放大给资产负债表和治理带来什么代价？",
+      "status": "completed"
+    },
+    {
+      "round": 3,
+      "finding": "库存周转恶化、供应商集中、监管与仿冒治理构成反证。",
+      "nextQuestion": "增长能否在2026年高基数上延续？",
+      "status": "completed"
+    },
+    {
+      "round": 4,
+      "finding": "2026年一季度收入仍增长75%—80%，但缺少利润、库存和IP结构数据。",
+      "nextQuestion": "等待中报验证平台化质量。",
+      "status": "completed"
+    },
+    {
+      "round": 5,
+      "finding": "LABUBU二手溢价下降与毛绒供给扩大约10倍同时发生，二手价格不能单独代表终端需求。",
+      "nextQuestion": "稀缺性下降后，全价销售、会员复购与非黄牛需求是否仍然稳定？",
+      "status": "completed"
+    },
+    {
+      "round": 6,
+      "finding": "会员与经营现金流证明真实消费基础，但库存、使用权资产和租赁负债同步快速增加。",
+      "nextQuestion": "全球扩张如何把热度转化为长期经营承诺？",
+      "status": "completed"
+    },
+    {
+      "round": 7,
+      "finding": "能源和燃料冲击已进入生产成本与海外毛利，全球IP业务同时成为全球供应链业务。",
+      "nextQuestion": "内容、电影与乐园能否抵消商品周期和成本波动？",
+      "status": "completed"
+    },
+    {
+      "round": 8,
+      "finding": "Sanrio同样经历product-first向内容与授权循环转型，证明商品先行并非原罪，但常青化需要多角色和多层变现。",
+      "nextQuestion": "重建提纲，以可证伪指标比较泡泡玛特的内容化与平台化进度。",
+      "status": "completed"
+    },
+    {
+      "round": 9,
+      "finding": "公司历史可概括为集合零售、艺术家IP运营、全球内容与体验三次身份转变。",
+      "nextQuestion": "每次身份变化依赖何种代表性角色，下一次转变靠什么完成？",
+      "status": "completed"
+    },
+    {
+      "round": 10,
+      "finding": "108万元孤品拍卖与强劲财报后股价单日下跌近23%构成狂热与疑虑的镜像。",
+      "nextQuestion": "如何区分情绪现场、二手投机与可持续经营事实？",
+      "status": "completed"
+    },
+    {
+      "round": 11,
+      "finding": "与Sony开发电影表明公司开始让内容反向服务商品和授权，但项目仍处早期。",
+      "nextQuestion": "内容投入如何建立可验证的角色生命周期？",
+      "status": "completed"
+    },
+    {
+      "round": 12,
+      "finding": "TOP TOY以约17,000个SKU、外部授权和供应链平台形成不同竞争路线。",
+      "nextQuestion": "选择最有解释力的同行比较轴并重建提纲。",
+      "status": "completed"
+    },
+    {
+      "round": 13,
+      "finding": "段永平从看不懂转为卖出看跌期权建仓，再将持股提高至7.65%；其长期命题包含利润、壁垒、企业文化和情绪价值需求。",
+      "nextQuestion": "用公司证据逐项检验这套投资命题，而不是把持仓当作背书。",
+      "status": "completed"
+    },
+    {
+      "round": 14,
+      "finding": "序言需要分开经营与二手市场、股价与长期持仓两组矛盾。",
+      "nextQuestion": "重写序言和第一章，并审核后续章节是否都具备机制与证据。",
+      "status": "completed"
+    },
+    {
+      "round": 15,
+      "finding": "段永平转变可由财报、估值和组织判断解释；两笔公开交易可估算但总盈利不可得；Luck二手价至少下跌78.4%与10倍供给扩张同时发生。",
+      "nextQuestion": "等待分析师确认三章的新事实密度与叙事顺序，再决定是否制作V5和V7。",
+      "status": "completed"
+    },
+    {
+      "round": 16,
+      "finding": "段永平的态度变化只能由公开原话、财报时点、交易行动和持仓披露还原，现有资料不足以归因其心理变化；无法核实的总利润也不是本章核心问题。",
+      "nextQuestion": "继续按事件—冲突—证据—边界的顺序审校其余章节，使故事性来自事实推进而非作者揣测。",
+      "status": "completed"
+    }
+  ],
+  "analystApproval": {
+    "status": "pending",
+    "approvedAt": null,
+    "note": "内部预览完成；正式发布等待分析师明确批准。"
+  },
+  "visibility": "internal",
+  "updatedAt": "2026-07-26T14:57:09.963Z"
+}

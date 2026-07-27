@@ -1,0 +1,32 @@
+{
+  "schemaVersion": "2.0.0",
+  "reportId": "research-2026-07-27-zhongji-xuchuang",
+  "title": "中际旭创：光速帝国，两头在外",
+  "deck": "一家生产光模块的公司，9年市值涨了500倍。上游的激光器芯片握在少数美国企业手里，下游81.9%的订单来自五个客户。它在价值链的中游做封装，毛利率42%，被机构一致看多到万亿市值。光速帝国，两头在外，这到底是一座桥，还是一条绳索？",
+  "company": "中际旭创",
+  "category": "公司",
+  "tags": ["AI基础设施", "光模块", "供应链", "公司调查"],
+  "sourceJsonPath": "/Users/panyp/WorkBuddy/#深度调查档案室/底稿/2026-07-27_中际旭创/article.json",
+  "jsonChartPlacements": {
+    "01": ["V1"],
+    "02": ["V2"],
+    "03": ["V3"],
+    "04": [],
+    "05": [],
+    "06": []
+  },
+  "sections": [
+    {"id":"lead","title":"导语：7月10日的那根大阴线","sectionPurpose":"直接解析指定 JSON 导语","claimIds":[],"visualIds":[]},
+    {"id":"01","title":"9年500倍","sectionPurpose":"直接解析指定 JSON 第一章","claimIds":["C1"],"visualIds":["V1"]},
+    {"id":"02","title":"两头在外","sectionPurpose":"直接解析指定 JSON 第二章","claimIds":["C2"],"visualIds":["V2"]},
+    {"id":"03","title":"小作文四起","sectionPurpose":"直接解析指定 JSON 第三章","claimIds":["C3"],"visualIds":["V3"]},
+    {"id":"04","title":"自己革自己的命","sectionPurpose":"直接解析指定 JSON 第四章","claimIds":[],"visualIds":[]},
+    {"id":"05","title":"93家机构和一个山东老头","sectionPurpose":"直接解析指定 JSON 第五章","claimIds":[],"visualIds":[]},
+    {"id":"06","title":"万亿定价了什么","sectionPurpose":"直接解析指定 JSON 第六章","claimIds":[],"visualIds":[]},
+    {"id":"epilogue","title":"尾声：两头在外","sectionPurpose":"直接解析指定 JSON 尾声","claimIds":[],"visualIds":[]}
+  ],
+  "sources": ["E1", "E2", "E3"],
+  "status": "internal-preview",
+  "previewLabel": "内部试读 · 主稿按指定 JSON 原文直解析 · 已加入图表",
+  "publishedAt": null
+}

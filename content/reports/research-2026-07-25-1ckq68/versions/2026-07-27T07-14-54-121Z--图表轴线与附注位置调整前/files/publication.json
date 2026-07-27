@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "2.0.0",
+  "reportId": "research-2026-07-25-1ckq68",
+  "title": "泡泡玛特：稀缺之外的IP生意",
+  "deck": "2025年6月，一只131厘米高的LABUBU孤品在北京以108万元成交；同月，一款官方售价99元的隐藏款二手均价在两天内由4,607.4元降至2,851.4元。拍卖、补货与转售价格属于不同市场，却共同提出一个问题：当商品不再依赖缺货，泡泡玛特的增长靠什么维持？",
+  "sections": [
+    {"id": "opening", "title": "序言：一只LABUBU的全球征途", "sectionPurpose": "从拍卖、补货与预售进入，把收藏价格与经营持续性区分开", "claimIds": ["C1", "C2"], "visualIds": []},
+    {"id": "scarcity", "title": "稀缺去哪儿了", "sectionPurpose": "以隐藏款、Luck款、预售和供给扩张拆开转售溢价与终端需求", "claimIds": ["C2", "C6"], "visualIds": ["V7", "V8"]},
+    {"id": "two-pop-marts", "title": "两个泡泡玛特", "sectionPurpose": "将年报中的会员与现金流同IP、品类和库存集中度并置", "claimIds": ["C5", "C6", "C7"], "visualIds": ["V1", "V2", "V4"]},
+    {"id": "duan", "title": "段永平的选择", "sectionPurpose": "以公开言论、财报、建仓工具和权益披露还原可验证的行动", "claimIds": ["C3"], "visualIds": ["V5"]},
+    {"id": "global", "title": "全球化的代价", "sectionPurpose": "解释海外收入、库存租约和能源成本如何共同进入经营杠杆", "claimIds": ["C7", "C8"], "visualIds": ["V3"]},
+    {"id": "content", "title": "商品先行，故事随后", "sectionPurpose": "界定电影、乐园和内容合作的战略方向与尚未验证之处", "claimIds": ["C9"], "visualIds": []},
+    {"id": "models", "title": "三种IP生意", "sectionPurpose": "比较Sanrio、TOP TOY与泡泡玛特的价值链位置和风险", "claimIds": ["C10", "C11"], "visualIds": ["V6"]},
+    {"id": "epilogue", "title": "尾声：稀缺之外", "sectionPurpose": "回到供给正常化后的角色寿命", "claimIds": ["C11"], "visualIds": []}
+  ],
+  "sources": ["E1", "E6", "E8", "E9", "E10", "E11", "E12", "E13", "E14", "E15", "E16", "E17", "E18", "E19", "E20", "E21", "E22", "E23", "E24", "E25", "E26"],
+  "status": "internal-preview",
+  "previewLabel": "内部试读 · 外部主稿结构重写版 · 资料截至2026年7月27日",
+  "publishedAt": null
+}

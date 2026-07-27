@@ -3,8 +3,17 @@ import assert from "node:assert/strict";
 import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
-import { classifyResearch, classifyRevision, createPackage, validatePackage, WORKFLOW_STAGES } from "../scripts/research-core.mjs";
+import {
+  classifyResearch,
+  classifyRevision,
+  createPackage,
+  validatePackage,
+  WORKFLOW_STAGES,
+  SOURCE_WORKPAPER_DIRS,
+  STAGE_WORKPAPER_DIRS,
+} from "../scripts/research-core.mjs";
 import { prepareArticleContent } from "../lib/article-content-contract.mjs";
+import { createResearchSnapshot, restoreResearchSnapshot } from "../scripts/research-versions.mjs";
 
 test("classifies entity and topic research", () => {
   assert.equal(classifyResearch("调查空客为什么交付下降"), "entity");
@@ -20,8 +29,96 @@ test("creates isolated, valid research package", () => {
   assert.ok(fs.existsSync(path.join(reportDir, "discussion.md")));
   assert.ok(fs.existsSync(path.join(reportDir, "draft.md")));
   assert.ok(fs.existsSync(path.join(reportDir, "sources")));
+  for (const name of SOURCE_WORKPAPER_DIRS) assert.ok(fs.existsSync(path.join(reportDir, "sources", name)));
+  assert.ok(fs.existsSync(path.join(reportDir, "sources", "README.md")));
+  assert.ok(fs.existsSync(path.join(reportDir, "working-drafts")));
+  for (const name of STAGE_WORKPAPER_DIRS) assert.ok(fs.existsSync(path.join(reportDir, "working-drafts", name)));
+  assert.ok(fs.existsSync(path.join(reportDir, "working-drafts", "README.md")));
+  assert.ok(fs.existsSync(path.join(reportDir, "versions")));
+  const outline = fs.readFileSync(path.join(reportDir, "outline.md"), "utf8");
+  const review = fs.readFileSync(path.join(reportDir, "review.md"), "utf8");
+  const revisions = fs.readFileSync(path.join(reportDir, "revisions.md"), "utf8");
+  const draft = fs.readFileSync(path.join(reportDir, "draft.md"), "utf8");
+  const discussion = fs.readFileSync(path.join(reportDir, "discussion.md"), "utf8");
+  assert.match(outline, /章节问题、核心结论、作用机制、证据编号、反证或替代解释、证据边界/);
+  assert.match(review, /准确性与来源可追溯 → 专业解释与证据边界 → 可读性、易读性和读者吸引力/);
+  assert.match(review, /问题、机制、证据、反证或替代解释、阶段性结论/);
+  assert.match(review, /不得编造、静默外推或把推断写成事实/);
+  assert.match(revisions, /经验保留范围（单篇、候选模式、共享编辑规则或共享框架规则）/);
+  assert.match(draft, /“图表规划”引用框/);
+  assert.match(draft, /位置、内容、问题、类型、证据、不采用形式和制作状态/);
+  assert.match(discussion, /读者视角/);
+  assert.match(discussion, /市场或系统视角/);
+  assert.match(discussion, /争议与反证视角/);
+  assert.match(discussion, /读者价值、事实张力、现有证据编号、证据缺口、反证条件和可回答状态/);
   const workflow = JSON.parse(fs.readFileSync(path.join(reportDir, "workflow-state.json"), "utf8"));
   assert.deepEqual(workflow.stages.map((stage) => stage.id), WORKFLOW_STAGES);
+});
+
+test("deep investigation skill continuously promotes reusable editorial learning", () => {
+  const skill = fs.readFileSync(path.resolve(".codex/skills/deep-investigation/SKILL.md"), "utf8");
+  const learning = fs.readFileSync(path.resolve(".codex/skills/deep-investigation/references/editorial-learning-loop.md"), "utf8");
+  const writing = fs.readFileSync(path.resolve(".codex/skills/deep-investigation/references/editorial-writing-contract.md"), "utf8");
+  const revision = fs.readFileSync(path.resolve(".codex/skills/deep-investigation/references/revision-protocol.md"), "utf8");
+  const questions = fs.readFileSync(path.resolve(".codex/skills/deep-investigation/references/question-distillation.md"), "utf8");
+  assert.match(skill, /references\/editorial-learning-loop\.md/);
+  assert.match(skill, /references\/editorial-writing-contract\.md/);
+  assert.match(skill, /references\/question-distillation\.md/);
+  assert.match(skill, /Do not ask the analyst to trigger learning separately/);
+  assert.match(learning, /report-local/);
+  assert.match(learning, /candidate-pattern/);
+  assert.match(learning, /shared-editorial-rule/);
+  assert.match(learning, /shared-framework-rule/);
+  assert.match(learning, /two similar corrections in different sections or reports/);
+  assert.match(writing, /What exact question does this section answer/);
+  assert.match(writing, /Through what mechanism/);
+  assert.match(writing, /Which evidence IDs support it/);
+  assert.match(writing, /What counterevidence, alternative explanation/);
+  assert.match(writing, /A famous investor's action is a lead/);
+  assert.match(writing, /begin with the measurable observation/);
+  assert.match(writing, /Never label market value as investment profit/);
+  assert.match(writing, /Do not invent inner motives/);
+  assert.match(writing, /If an unavailable calculation does not help the reader/);
+  assert.match(writing, /Do not repeat the preceding paragraph as a meta-summary/);
+  assert.match(writing, /Keep paragraphs causally connected/);
+  assert.match(skill, /Accuracy and professional evidence discipline are the primary gate/);
+  assert.match(writing, /Accuracy and professional evidence discipline come first/);
+  assert.match(writing, /Readability, ease, and attraction come next/);
+  assert.match(writing, /Dramatic readability cannot repair unsupported causality/);
+  assert.match(writing, /Do not use classroom, game, or motivational language/);
+  assert.match(writing, /tone of a financial investigation/);
+  assert.match(revision, /After every substantive correction/);
+  assert.match(questions, /Reader lens/);
+  assert.match(questions, /Market or system lens/);
+  assert.match(questions, /Controversy and disconfirmation lens/);
+  assert.match(questions, /reader value/);
+  assert.match(questions, /disconfirmation/);
+  assert.match(questions, /Do not impose fixed word, chapter, source-count, or chart quotas/);
+});
+
+test("visual planning is embedded in prose drafting without auto-publishing", () => {
+  const skill = fs.readFileSync(path.resolve(".codex/skills/deep-investigation/SKILL.md"), "utf8");
+  const planning = fs.readFileSync(path.resolve(".codex/skills/deep-investigation/references/visual-planning.md"), "utf8");
+  const protocol = fs.readFileSync(path.resolve("docs/visual-protocol.md"), "utf8");
+  assert.match(skill, /standardized visual-planning blockquote/);
+  assert.match(skill, /planned placement alone must not create a website chart/);
+  assert.match(planning, /【图表规划 V1｜视觉类型】/);
+  assert.match(planning, /Keep planned visuals out of `publication\.json\.sections\[\]\.visualIds`/);
+  assert.match(protocol, /共享网页编译器忽略引用块/);
+});
+
+test("report snapshots restore old files and create a safety version", () => {
+  const root = fs.mkdtempSync(path.join(os.tmpdir(), "dil-v2-version-"));
+  const { reportDir } = createPackage(root, "调查一家测试公司", "version-test");
+  const draftPath = path.join(reportDir, "draft.md");
+  fs.writeFileSync(draftPath, "第一版\n");
+  const snapshot = createResearchSnapshot(reportDir, "before rewrite", new Date("2026-07-26T10:00:00.000Z"));
+  fs.writeFileSync(draftPath, "第二版\n");
+  const restored = restoreResearchSnapshot(reportDir, snapshot.versionId);
+  assert.equal(fs.readFileSync(draftPath, "utf8"), "第一版\n");
+  assert.ok(fs.existsSync(path.join(reportDir, "versions", restored.safetyVersion, "manifest.json")));
+  const manifest = JSON.parse(fs.readFileSync(path.join(reportDir, "versions", snapshot.versionId, "manifest.json"), "utf8"));
+  assert.ok(manifest.files.some((entry) => entry.path === "draft.md" && entry.sha256));
 });
 
 test("classifies analyst revisions before editing", () => {
@@ -134,22 +231,36 @@ test("internal previews are package-driven and use one shared renderer", () => {
   assert.match(index, /report\.reportId/);
   assert.doesNotMatch(index, /airbus-example/);
   assert.match(route, /generateStaticParams/);
+  assert.match(route, /dynamicParams\s*=\s*false/);
   assert.match(route, /PublishedArticle/);
   assert.match(route, /compileResearchReport/);
   assert.match(loader, /internal-preview/);
+  assert.match(loader, /sourceJsonPath/);
+  assert.match(loader, /resolveSourceJsonPath/);
+  assert.match(loader, /jsonArticle/);
   assert.match(loader, /publication\.json/);
   assert.match(loader, /draft\.md/);
   assert.match(loader, /evidence-ledger\.json/);
   assert.match(loader, /visual-plan\.json/);
   assert.match(compiler, /articleHtml/);
+  assert.match(compiler, /value-chain-bridge/);
   assert.doesNotMatch(compiler, /drop-cap/);
   assert.doesNotMatch(compiler, /class="footnotes"/);
   assert.doesNotMatch(compiler, /class="chap-num"/);
   assert.match(compiler, /articleNotesHtml/);
+  assert.match(compiler, /raw\.startsWith\("序言"\) \? "序言"/);
   assert.match(compiler, /chart-box/);
   assert.match(compiler, /story-graphic/);
   assert.match(compiler, /data-h-pct/);
   assert.match(compiler, /data-w/);
+  assert.match(compiler, /annotated-investment-timeline/);
+  assert.match(compiler, /editorial-comparison-table/);
+  assert.match(compiler, /paired-fact-timeline/);
+  assert.match(compiler, /ranked-value-bars/);
+  assert.match(compiler, /compileJsonArticle/);
+  assert.match(compiler, /jsonChartPlacements/);
+  assert.match(compiler, /research-bars-axis/);
+  assert.match(compiler, /line\.startsWith\(">"\)/);
   assert.match(compiler, /legacyStyles:\s*""/);
   assert.match(compiler, /openQuestions:\s*report\.openQuestions/);
   assert.doesNotMatch(compiler, /editorial-questions|试读后待确认/);
@@ -162,6 +273,10 @@ test("internal previews are package-driven and use one shared renderer", () => {
   assert.match(reviewPanel, /待确认判断、尚不确定的内容及可能存在的问题/);
   assert.match(reviewPanel, /返回试读列表/);
   assert.doesNotMatch(css, /research-preview-body|preview-chart|preview-open-questions/);
+  assert.match(css, /\.published-article-body \.research-timeline\s*\{/);
+  assert.match(css, /\.published-article-body \.comparison-table\s*\{/);
+  assert.match(css, /\.published-article-body \.fact-lanes\s*\{/);
+  assert.match(css, /\.published-article-body \.ranked-bars\s*\{/);
 });
 
 test("published directory uses one interactive card framework", () => {

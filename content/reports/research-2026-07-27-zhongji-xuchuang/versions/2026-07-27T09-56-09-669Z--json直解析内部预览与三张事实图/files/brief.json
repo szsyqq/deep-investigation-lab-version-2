@@ -1,0 +1,14 @@
+{
+  "schemaVersion": "2.0.0",
+  "id": "research-2026-07-27-zhongji-xuchuang",
+  "request": "按指定 article.json 原文建立中际旭创内部预览，并在不改写文章的前提下加入必要图表。",
+  "researchType": "entity",
+  "status": "visual-editing",
+  "asOf": "2026-07-27",
+  "scope": {"included":["指定 JSON 的引言、导语、正文、尾声和注释","仅有明确数据支撑的图表"],"excluded":["改写或补充 JSON 正文","把未验证推断加工成事实"],"geography":"中国、美国及公司披露的海外供应链","period":"2016年—2026年7月"},
+  "coreQuestion": "中际旭创的高速增长如何依赖外部上游器件和下游AI客户，这种依赖会在何处影响经营与估值？",
+  "subQuestions": ["2016年收购后，收入和利润增长的可核实路径是什么？","上游核心器件与下游客户集中度如何界定公司的价值链位置？","市场传闻和港股发行窗口为何会放大短期股价波动？"],
+  "disconfirmingEvidence": ["更完整的供应商替代、客户留存和自主芯片数据可能削弱“两头在外”的风险判断。"],
+  "createdAt": "2026-07-27T09:47:28.152Z",
+  "updatedAt": "2026-07-27T10:00:00.000Z"
+}

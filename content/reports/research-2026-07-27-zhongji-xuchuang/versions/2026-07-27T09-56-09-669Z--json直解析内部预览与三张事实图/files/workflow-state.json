@@ -1,0 +1,18 @@
+{
+  "schemaVersion": "2.0.0",
+  "reportId": "research-2026-07-27-zhongji-xuchuang",
+  "currentStage": "visual-editing",
+  "stages": [
+    {"id":"intake","status":"completed"},
+    {"id":"discussion-research","status":"completed"},
+    {"id":"outline-sources","status":"completed"},
+    {"id":"drafting","status":"completed"},
+    {"id":"visual-editing","status":"in-progress"},
+    {"id":"review-revision","status":"pending"},
+    {"id":"preview-publication","status":"pending"}
+  ],
+  "researchLoops": [{"round":1,"finding":"用户提供的 article.json 含完整文章和36条注释；本轮只建立直解析预览及三张事实图，不补写或验证原文。","nextQuestion":"分析师审阅原文、段落、图表位置与图表说明后，决定是否进入事实核验和编辑修改。","status":"completed"}],
+  "analystApproval":{"status":"pending","approvedAt":null,"note":"仅供内部试读；未获得正式发布批准。"},
+  "visibility":"internal",
+  "updatedAt":"2026-07-27T10:00:00.000Z"
+}

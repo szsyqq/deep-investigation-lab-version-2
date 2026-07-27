@@ -1,0 +1,8 @@
+{
+  "schemaVersion":"2.0.0",
+  "reportId":"research-2026-07-27-zhongji-xuchuang",
+  "approvedSections":[],
+  "lockedFacts":[],
+  "openQuestions":["请确认三张图是否均服务于阅读，而非重复正文：业绩跃迁、价值链位置、辟谣与发行时间线。","正文为指定 JSON 原文直解析；如需改动事实或措辞，应先在原始文章底稿或明确的修改意见中确认。"],
+  "decisions":[{"id":"D1","date":"2026-07-27","scope":"report-local","decision":"指定 article.json 是本篇网页正文的唯一文字来源；网页渲染器只转换分段、标题、脚注和图表位置。","rationale":"避免网页实现再次改写用户提供的文章。","status":"active"}]
+}

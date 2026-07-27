@@ -1,0 +1,106 @@
+{
+  "schemaVersion": "2.0.0",
+  "reportId": "research-2026-07-25-1ckq68",
+  "thesis": "108万元的孤品拍卖记录了LABUBU热潮的高度，却不能衡量一家公司的持续性。供给恢复后，二手溢价下降与官方销售增长并存；年报显示泡泡玛特既有真实的会员和现金流，也面临超级IP集中、库存租约和全球成本的考验。电影与内容是延长角色寿命的尝试，而非已经证明的第二条增长曲线。",
+  "claims": [
+    {
+      "id": "C1",
+      "type": "fact",
+      "text": "2025年一只131厘米孤品LABUBU以108万元成交；2026年泡泡玛特发布高速增长年报后，股价仍单日下跌近23%。",
+      "evidenceIds": ["E16", "E18"],
+      "counterEvidence": ["孤品拍卖不代表普通商品价格，单日股价也不能单独证明基本面恶化。"],
+      "confidence": "high",
+      "status": "ready"
+    },
+    {
+      "id": "C2",
+      "type": "analysis",
+      "text": "二手价格下降不能被直接解释为消费者离场，因为公司同期将毛绒供给扩大约10倍；稀缺性、转售需求和终端消费必须分开衡量。",
+      "evidenceIds": ["E9", "E25", "E26"],
+      "counterEvidence": ["海外增速放缓和部分新品二手价格走弱仍可能包含真实需求降温。"],
+      "confidence": "medium-high",
+      "status": "ready"
+    },
+    {
+      "id": "C3",
+      "type": "fact",
+      "text": "段永平从公开表示看不懂、不投资，转为卖出看跌期权建仓并持续增持；截至2026年7月6日申报持股比例为7.65%，7月23日称十年内大概率不会卖。",
+      "evidenceIds": ["E13", "E20", "E21", "E22", "E23", "E24"],
+      "counterEvidence": ["长期持有表态不是承诺，其公开逻辑明确承认情绪价值需求和长期利润假设可能出错。"],
+      "confidence": "medium-high",
+      "status": "ready"
+    },
+    {
+      "id": "C4",
+      "type": "analysis",
+      "text": "泡泡玛特的成长经历了三次身份转变：从集合零售商到艺术家IP运营商，再到全球商品、内容与体验公司；每次转变都由代表性角色和渠道能力共同推动。",
+      "evidenceIds": ["E14", "E15", "E1", "E17"],
+      "counterEvidence": ["电影和内容业务仍处早期，第三次身份转变尚未完成。"],
+      "confidence": "medium-high",
+      "status": "ready"
+    },
+    {
+      "id": "C5",
+      "type": "fact",
+      "text": "2025年泡泡玛特收入371.20亿元、净利润130.12亿元，经营活动净现金流108.65亿元；会员销售占93.7%，复购率55.7%。",
+      "evidenceIds": ["E1"],
+      "counterEvidence": [],
+      "confidence": "high",
+      "status": "ready"
+    },
+    {
+      "id": "C6",
+      "type": "analysis",
+      "text": "会员与现金流表明公司拥有超越黄牛的真实消费基础，但THE MONSTERS占收入38.1%，超级IP仍决定增长斜率。",
+      "evidenceIds": ["E1", "E18"],
+      "counterEvidence": ["六个IP收入超过20亿元、17个艺术家IP超过1亿元，说明公司并非单IP结构。"],
+      "confidence": "high",
+      "status": "ready"
+    },
+    {
+      "id": "C7",
+      "type": "analysis",
+      "text": "全球扩张正在把流行热度转化为资产负债表承诺：库存、使用权资产、租赁负债和变动租金显著增加。",
+      "evidenceIds": ["E1"],
+      "counterEvidence": ["强劲经营现金流和净现金状况显著缓冲了扩张风险。"],
+      "confidence": "high",
+      "status": "ready"
+    },
+    {
+      "id": "C8",
+      "type": "fact",
+      "text": "2026年公司提示伊朗相关能源价格冲击推高原料、生产和燃油成本，并将影响海外毛利。",
+      "evidenceIds": ["E10"],
+      "counterEvidence": ["成本冲击的持续时间和最终利润率影响尚未在完整财报中披露。"],
+      "confidence": "medium-high",
+      "status": "ready"
+    },
+    {
+      "id": "C9",
+      "type": "analysis",
+      "text": "泡泡玛特试图由商品先行转向内容反哺商品，但与Sony开发电影和扩建乐园只能证明方向，尚不能证明内容飞轮成立。",
+      "evidenceIds": ["E11", "E17", "E10"],
+      "counterEvidence": ["Sanrio的历史表明product-first也可能逐步形成常青IP。"],
+      "confidence": "medium-high",
+      "status": "ready"
+    },
+    {
+      "id": "C10",
+      "type": "analysis",
+      "text": "Sanrio、TOP TOY和泡泡玛特代表三种不同IP生意：多角色授权、广泛外部授权与供应链平台、少数艺术家IP深度运营。",
+      "evidenceIds": ["E12", "E19", "E1"],
+      "counterEvidence": ["三家公司地域、会计口径和渠道结构不同，不宜做简单利润率或估值排名。"],
+      "confidence": "medium",
+      "status": "ready"
+    },
+    {
+      "id": "C11",
+      "type": "forecast",
+      "text": "判断泡泡玛特是否跨越爆款周期，应观察全价销售与复购、非THE MONSTERS增长、库存周转、海外区域利润和内容授权收入，而非只看二手价格或总收入。",
+      "evidenceIds": ["E1", "E8", "E9", "E10"],
+      "counterEvidence": ["公司尚未披露IP和地区层面的完整队列及复购数据。"],
+      "confidence": "medium",
+      "status": "ready"
+    }
+  ]
+}

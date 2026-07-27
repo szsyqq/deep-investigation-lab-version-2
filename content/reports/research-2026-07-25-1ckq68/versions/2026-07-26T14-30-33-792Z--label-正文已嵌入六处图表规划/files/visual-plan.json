@@ -1,0 +1,120 @@
+{
+  "schemaVersion": "2.0.0",
+  "reportId": "research-2026-07-25-1ckq68",
+  "visuals": [
+    {
+      "id": "V1",
+      "claimId": "C5",
+      "pattern": "trend",
+      "component": "metric-series",
+      "title": "规模扩大并未稀释利润率",
+      "readerTakeaway": "2021至2025年，收入增长同时伴随净利率上升，但2025年斜率明显异常。",
+      "evidenceIds": ["E1"],
+      "data": {
+        "unit": "人民币亿元 / %",
+        "series": [
+          {"year": 2021, "revenue": 44.91, "netMargin": 19.0},
+          {"year": 2022, "revenue": 46.17, "netMargin": 10.3},
+          {"year": 2023, "revenue": 63.01, "netMargin": 17.3},
+          {"year": 2024, "revenue": 130.38, "netMargin": 25.4},
+          {"year": 2025, "revenue": 371.20, "netMargin": 35.1}
+        ]
+      },
+      "sourceNote": "泡泡玛特2025年年度报告；收入由人民币千元换算为亿元。",
+      "whyThisForm": "连续五年数据能显示2025年的增长和利润率跃迁都偏离此前轨迹。",
+      "doNotUse": ["decorative-number-cards-only", "stock-price-overlay"]
+    },
+    {
+      "id": "V2",
+      "claimId": "C6",
+      "pattern": "distribution",
+      "component": "paired-composition-bars",
+      "title": "增长也提高了单一IP和品类的权重",
+      "readerTakeaway": "THE MONSTERS、毛绒和非中国内地收入在2025年同步提高占比。",
+      "evidenceIds": ["E1"],
+      "data": {
+        "unit": "占集团收入%",
+        "comparisons": [
+          {"label": "THE MONSTERS", "2024": 23.3, "2025": 38.1},
+          {"label": "毛绒", "2024": 21.7, "2025": 50.4},
+          {"label": "非中国内地", "2024": 31.8, "2025": 43.8}
+        ]
+      },
+      "sourceNote": "泡泡玛特2025年年度报告；非中国内地为亚太、美洲、欧洲及其他地区之和。",
+      "whyThisForm": "三组同口径占比对照能同时呈现集中度、品类迁移和全球化。",
+      "doNotUse": ["three-pie-charts", "radar-chart"]
+    },
+    {
+      "id": "V3",
+      "claimId": "C8",
+      "pattern": "causality",
+      "component": "story-flow",
+      "title": "国际事件如何传导至玩具毛利率",
+      "readerTakeaway": "能源冲击通过原料、生产和运输进入海外商品成本，IP公司无法脱离全球供应链。",
+      "evidenceIds": ["E10", "E1"],
+      "data": {
+        "nodes": ["中东能源冲击", "化工原料与制造成本", "国际运输与燃油成本", "区域库存和门店履约", "海外毛利率"],
+        "feedback": "区域售价和收入结构决定成本能否被吸收"
+      },
+      "sourceNote": "路透对2026年5月分析师电话会的报道，并结合泡泡玛特2025年年度报告的库存和海外渠道披露。",
+      "whyThisForm": "本节核心是成本传导关系，因果链比孤立数字更能降低理解成本。",
+      "doNotUse": ["world-map-without-data", "generic-risk-icons"]
+    },
+    {
+      "id": "V4",
+      "claimId": "C7",
+      "pattern": "contradiction",
+      "component": "paired-metric-comparison",
+      "title": "高毛利与更重的库存同时出现",
+      "readerTakeaway": "全球化改善毛利率，也拉长备货和周转；两者不是互相否定的信号。",
+      "evidenceIds": ["E1"],
+      "data": {
+        "2024": {"grossMargin": 66.8, "inventoryRmb100m": 15.25, "inventoryDays": 102},
+        "2025": {"grossMargin": 72.1, "inventoryRmb100m": 54.73, "inventoryDays": 123}
+      },
+      "sourceNote": "泡泡玛特2025年年度报告；库存由人民币百万元换算为亿元。",
+      "whyThisForm": "将方向相反的运营指标并置，避免把高毛利误读为没有扩张代价。",
+      "doNotUse": ["dual-axis-line-chart", "risk-gauge"]
+    },
+    {
+      "id": "V5",
+      "claimId": "C3",
+      "pattern": "timeline",
+      "component": "annotated-investment-timeline",
+      "title": "从改变态度到持股7.65%",
+      "readerTakeaway": "段永平的持仓经过研究、卖出看跌期权和连续增持逐步形成，不是一笔突然出现的名人交易。",
+      "evidenceIds": ["E13", "E20", "E21", "E22"],
+      "data": {
+        "events": [
+          {"date": "2026-03-30", "event": "收回此前不投资泡泡玛特的表态"},
+          {"date": "2026-04", "event": "卖出看跌期权开始建仓"},
+          {"date": "2026-05-25", "event": "持股达到5.69%"},
+          {"date": "2026-05-28", "event": "持股升至6.04%"},
+          {"date": "2026-07-06", "event": "申报持股1.02亿股，占7.65%"},
+          {"date": "2026-07-23", "event": "表示十年内大概率不会卖"}
+        ]
+      },
+      "sourceNote": "港交所权益披露的媒体记录，以及段永平公开帖文的媒体整理。",
+      "whyThisForm": "本节的证据重点是态度、工具、仓位和长期表态的先后关系，时间线比股价图更准确。",
+      "doNotUse": ["stock-price-line", "celebrity-portrait", "single-number-card"],
+      "status": "placement-planned"
+    },
+    {
+      "id": "V6",
+      "claimId": "C10",
+      "pattern": "comparison",
+      "component": "editorial-comparison-table",
+      "title": "三种IP生意的控制权与风险",
+      "readerTakeaway": "Sanrio、TOP TOY和泡泡玛特分别偏向授权常青化、供应链平台和艺术家IP深度运营，控制权越深，库存与角色选择风险也越集中。",
+      "evidenceIds": ["E1", "E12", "E19"],
+      "data": {
+        "columns": ["Sanrio", "TOP TOY", "泡泡玛特"],
+        "rows": ["IP来源", "主要变现方式", "库存承担", "消费者数据", "角色寿命机制", "主要风险"]
+      },
+      "sourceNote": "泡泡玛特2025年年度报告、Sanrio 2025年综合报告、名创优品2025年年度报告。",
+      "whyThisForm": "同行财务口径并不完全可比，编辑型比较表可以比较价值链位置而不制造虚假的量化排名。",
+      "doNotUse": ["radar-chart", "valuation-ranking", "profit-ranking"],
+      "status": "placement-planned"
+    }
+  ]
+}

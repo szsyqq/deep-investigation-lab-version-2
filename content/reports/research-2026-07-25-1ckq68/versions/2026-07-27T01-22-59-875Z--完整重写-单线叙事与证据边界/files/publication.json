@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "2.0.0",
+  "reportId": "research-2026-07-25-1ckq68",
+  "title": "稀缺之后：泡泡玛特的第二场考试",
+  "deck": "一只原价约50元的LABUBU，在北京拍出108万元。九个月后，泡泡玛特交出371.20亿元收入、130.12亿元净利润，股价却在财报发布日大跌。二手溢价回落、官方供给扩大、段永平持续增持：当商品不再稀缺，泡泡玛特卖出的究竟是角色，还是缺货本身？",
+  "sections": [
+    {"id": "opening", "title": "序言：108万元之后", "sectionPurpose": "以孤品拍卖建立热潮高度，并提出它不能回答公司的持续性", "claimIds": ["C1"], "visualIds": []},
+    {"id": "duan", "title": "一位长期投资者如何改了主意", "sectionPurpose": "以公开言论、财报、股价和权益披露还原段永平的行动线，并将其判断拆成待验证假设", "claimIds": ["C3"], "visualIds": []},
+    {"id": "scarcity", "title": "价格回到108元之后", "sectionPurpose": "沿具体商品价格、线上预售和扩产拆开转售溢价与终端需求", "claimIds": ["C2"], "visualIds": []},
+    {"id": "business", "title": "泡泡玛特到底卖什么", "sectionPurpose": "把公司从集合零售到IP运营的历史与年报中的会员、现金流、集中度合并为同一商业系统", "claimIds": ["C4", "C5", "C6"], "visualIds": ["V1", "V2"]},
+    {"id": "global", "title": "热度走向全球，成本也随之全球化", "sectionPurpose": "解释海外增长如何同时带来库存、租约和能源成本传导", "claimIds": ["C7", "C8"], "visualIds": ["V4", "V3"]},
+    {"id": "content", "title": "角色能否离开商品货架", "sectionPurpose": "评估电影、乐园、内容化与同行路径能否延长角色寿命", "claimIds": ["C9", "C10"], "visualIds": []},
+    {"id": "scorecard", "title": "四个尚未被回答的问题", "sectionPurpose": "以可披露经营指标界定长期利润判断的证据边界", "claimIds": ["C11"], "visualIds": []},
+    {"id": "epilogue", "title": "尾声：稀缺之外", "sectionPurpose": "回到供给正常化后的角色寿命", "claimIds": ["C11"], "visualIds": []}
+  ],
+  "sources": ["E1", "E6", "E8", "E9", "E10", "E11", "E12", "E13", "E14", "E15", "E16", "E17", "E18", "E19", "E20", "E21", "E22", "E23", "E24", "E25", "E26"],
+  "status": "internal-preview",
+  "previewLabel": "内部试读 · 结构性重写第二版 · 资料截至2026年7月26日",
+  "publishedAt": null
+}
