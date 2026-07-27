@@ -1,0 +1,29 @@
+{
+  "schemaVersion": "2.0.0",
+  "reportId": "research-2026-07-25-1ckq68",
+  "title": "泡泡玛特：塑料玩具里的千亿帝国",
+  "deck": "2025年6月，一只薄荷色Labubu雕塑以108万元成交。同一天，这个系列的隐藏款“本我”在二手市场报价4522元——而它的官方售价是99元。六个月后，同一款“本我”跌到540元，跌了88%。稀缺溢价在消退，但141亿的年营收、35%的净利率、段永平的百亿持仓，又让市场无法简单地说“泡泡破了”。如果LABUBU不再稀缺，泡泡玛特的2143亿港元市值还剩下什么？",
+  "sourceJsonPath": "/Users/panyp/WorkBuddy/#深度调查档案室/底稿/2026-07-26_泡泡玛特/文章文本.json",
+  "jsonChartPlacements": {
+    "01": ["V7", "V8"],
+    "02": ["V1", "V2", "V4"],
+    "03": ["V5"],
+    "04": [],
+    "05": [],
+    "06": ["V6"]
+  },
+  "sections": [
+    {"id": "lead", "title": "导语：一只Labubu的全球征途", "sectionPurpose": "直接解析原始 JSON 导语", "claimIds": [], "visualIds": []},
+    {"id": "01", "title": "稀缺去哪儿了", "sectionPurpose": "直接解析原始 JSON 第一章", "claimIds": [], "visualIds": ["V7", "V8"]},
+    {"id": "02", "title": "两个泡泡玛特", "sectionPurpose": "直接解析原始 JSON 第二章", "claimIds": [], "visualIds": ["V1", "V2", "V4"]},
+    {"id": "03", "title": "段永平的选择", "sectionPurpose": "直接解析原始 JSON 第三章", "claimIds": [], "visualIds": ["V5"]},
+    {"id": "04", "title": "全球化的代价", "sectionPurpose": "直接解析原始 JSON 第四章", "claimIds": [], "visualIds": []},
+    {"id": "05", "title": "商品先行，故事随后", "sectionPurpose": "直接解析原始 JSON 第五章", "claimIds": [], "visualIds": []},
+    {"id": "06", "title": "三种IP生意", "sectionPurpose": "直接解析原始 JSON 第六章", "claimIds": [], "visualIds": ["V6"]},
+    {"id": "epilogue", "title": "尾声：稀缺之外", "sectionPurpose": "直接解析原始 JSON 尾声", "claimIds": [], "visualIds": []}
+  ],
+  "sources": ["E1", "E6", "E8", "E9", "E10", "E11", "E12", "E13", "E14", "E15", "E16", "E17", "E18", "E19", "E20", "E21", "E22", "E23", "E24", "E25", "E26"],
+  "status": "internal-preview",
+  "previewLabel": "内部试读 · 主稿按指定 JSON 原文直解析 · 已加入图表",
+  "publishedAt": null
+}

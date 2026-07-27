@@ -1,0 +1,19 @@
+{
+  "schemaVersion": "2.0.0",
+  "reportId": "research-2026-07-25-1ckq68",
+  "title": "泡泡玛特越过盲盒之后",
+  "deck": "它已经证明能把艺术家角色工业化、全球化；尚未证明的是，这台机器能否低波动地持续复制爆款。",
+  "sections": [
+    {"id":"opening","title":"导言：一只小怪物如何改写一家公司","sectionPurpose":"从角色全球化切入，建立平台能力与爆款周期的核心矛盾","claimIds":["C1","C2"],"visualIds":["V1"]},
+    {"id":"format-shift","title":"增长的发动机，先换了商品形态","sectionPurpose":"解释毛绒品类如何扩大角色使用场景","claimIds":["C2"],"visualIds":["V2"]},
+    {"id":"loop","title":"公司卖的不是神秘，而是缩短试错","sectionPurpose":"拆解IP运营反馈闭环","claimIds":["C3"],"visualIds":["V3"]},
+    {"id":"globalization","title":"全球化抬高毛利，也抬高库存","sectionPurpose":"并置增长质量与运营代价","claimIds":["C4"],"visualIds":["V4"]},
+    {"id":"moat-risk","title":"护城河与风险来自同一个系统","sectionPurpose":"评估集中度、供应链、监管与仿冒治理","claimIds":["C5"],"visualIds":[]},
+    {"id":"scorecard","title":"下一张成绩单，不应只看收入","sectionPurpose":"提出可证伪的后续观察指标","claimIds":["C6","C7"],"visualIds":[]},
+    {"id":"epilogue","title":"尾声：一个角色离开盒子之后","sectionPurpose":"回到角色生命周期与中国IP工业能力的长期命题","claimIds":["C8"],"visualIds":[]}
+  ],
+  "sources": ["E1","E2","E3","E4","E5","E6","E7","E8"],
+  "status": "internal-preview",
+  "previewLabel": "内部试读 · 资料截至2026年7月26日",
+  "publishedAt": null
+}

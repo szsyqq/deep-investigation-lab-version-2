@@ -32,3 +32,17 @@ Append to `editorial-state.json.decisions`:
 Do not automatically rewrite global rules from one decision. Propose a rule change only after repeated, similar decisions.
 
 Append a human-readable entry to `revisions.md` as well. This is the analyst-facing history; `editorial-state.json` remains the machine-readable decision memory.
+
+## Continuous learning
+
+After every substantive correction, read and execute `editorial-learning-loop.md`. Do this in the same task; do not wait for the analyst to request an upgrade.
+
+Classify the decision as `report-local`, `candidate-pattern`, `shared-editorial-rule`, or `shared-framework-rule`. An explicit global instruction promotes immediately. Otherwise, promote after two similar corrections in different sections or reports.
+
+When promoting:
+
+1. preserve the originating decisions and applicability boundary;
+2. update the appropriate shared reference or protocol;
+3. add a positive/negative example for judgment rules;
+4. add a regression test for deterministic rules;
+5. report the promoted learning at handoff.

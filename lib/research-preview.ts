@@ -7,7 +7,23 @@ export type PreviewPublication = {
   deck: string;
   previewLabel: string;
   status: string;
+  company?: string;
+  category?: string;
+  tags?: string[];
   sections?: PreviewSection[];
+  sourceJsonPath?: string;
+  jsonChartPlacements?: Record<string, string[]>;
+};
+
+export type PreviewJsonArticle = {
+  title: string;
+  author?: string;
+  date?: string;
+  引言?: string;
+  导语?: { title?: string; text?: string };
+  chapters?: Record<string, { title?: string; text?: string }>;
+  尾声?: { title?: string; text?: string };
+  footnotes?: Record<string, string>;
 };
 
 export type PreviewEvidence = {
@@ -45,6 +61,8 @@ export type PreviewReport = PreviewPublication & {
   evidence: PreviewEvidence[];
   visuals: PreviewVisual[];
   sections: PreviewSection[];
+  jsonArticle?: PreviewJsonArticle;
+  jsonChartPlacements?: Record<string, string[]>;
 };
 
 const reportsRoot = path.join(process.cwd(), "content", "reports");
@@ -52,6 +70,10 @@ const previewStatuses = new Set(["internal-preview", "analyst-confirmation"]);
 
 function readJson<T>(file: string): T {
   return JSON.parse(fs.readFileSync(file, "utf8")) as T;
+}
+
+function resolveSourceJsonPath(reportDir: string, sourceJsonPath: string) {
+  return path.isAbsolute(sourceJsonPath) ? sourceJsonPath : path.join(reportDir, sourceJsonPath);
 }
 
 export function getPreviewSlugs() {
@@ -81,6 +103,10 @@ export function getPreviewReport(slug: string): PreviewReport | null {
   const editorial = readJson<{ openQuestions?: string[] }>(path.join(reportDir, "editorial-state.json"));
   const evidenceLedger = readJson<{ items: PreviewEvidence[] }>(path.join(reportDir, "evidence-ledger.json"));
   const visualPlan = readJson<{ visuals: PreviewVisual[] }>(path.join(reportDir, "visual-plan.json"));
+  const sourceJsonPath = publication.sourceJsonPath ? resolveSourceJsonPath(reportDir, publication.sourceJsonPath) : undefined;
+  const jsonArticle = sourceJsonPath && fs.existsSync(sourceJsonPath)
+    ? readJson<PreviewJsonArticle>(sourceJsonPath)
+    : undefined;
   return {
     ...publication,
     draft: fs.readFileSync(path.join(reportDir, "draft.md"), "utf8"),
@@ -90,5 +116,7 @@ export function getPreviewReport(slug: string): PreviewReport | null {
     evidence: evidenceLedger.items,
     visuals: visualPlan.visuals,
     sections: publication.sections ?? [],
+    jsonArticle,
+    jsonChartPlacements: publication.jsonChartPlacements,
   };
 }

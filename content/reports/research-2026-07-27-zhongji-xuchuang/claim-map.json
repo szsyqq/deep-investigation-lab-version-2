@@ -1,0 +1,10 @@
+{
+  "schemaVersion": "2.0.0",
+  "reportId": "research-2026-07-27-zhongji-xuchuang",
+  "thesis": "网页按指定文章原文展示；图表只将原文中可核对的增长轨迹、价值链位置和公开事件时间线转成更易读取的结构，不新增正文判断。",
+  "claims": [
+    {"id":"C1","type":"fact","text":"原文注释[8]列出：公司2023年至2025年营收由107.18亿元升至382.40亿元，净利润由21.74亿元升至107.97亿元。","evidenceIds":["E1"],"counterEvidence":["增长数据不能单独证明未来的需求、份额或利润率。"],"confidence":"as-supplied","status":"ready"},
+    {"id":"C2","type":"fact","text":"原文将上游核心器件依赖、预付款增加、前五客户占比和境外收入并列，用于说明公司的价值链位置。","evidenceIds":["E2"],"counterEvidence":["原文未提供完整供应商替代率或客户合同期限，图表不将集中度等同于必然断供或必然丢单。"],"confidence":"as-supplied","status":"ready"},
+    {"id":"C3","type":"fact","text":"原文记录45天内四次公开辟谣、7月12日电话会以及7月下旬H股发行窗口。","evidenceIds":["E3"],"counterEvidence":["时间相邻不能证明传闻来源或任何主体的动机。"],"confidence":"as-supplied","status":"ready"}
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "schemaVersion": "2.0.0",
+  "reportId": "research-2026-07-25-1ckq68",
+  "thesis": "泡泡玛特在2025年完成的关键转变，不是把更多盲盒卖给更多人，而是证明艺术家IP可以经由品类迁移、直营渠道和全球供应链被工业化放大；但它尚未证明这种爆款可以低波动地持续复制。",
+  "claims": [
+    {"id":"C1","type":"fact","text":"2025年泡泡玛特收入371.20亿元、净利润130.12亿元，较2021年收入扩大约7.3倍，毛利率升至72.1%。","evidenceIds":["E1"],"counterEvidence":[],"confidence":"high","status":"ready"},
+    {"id":"C2","type":"analysis","text":"2025年的跃迁是IP、品类与地域三重集中和扩张共同造成：THE MONSTERS占38.1%，毛绒占50.4%，非中国内地收入占43.8%。","evidenceIds":["E1"],"counterEvidence":["六个IP收入超过20亿元、17个艺术家IP超过1亿元，说明集中不等于单IP。"],"confidence":"high","status":"ready"},
+    {"id":"C3","type":"analysis","text":"公司的核心能力是把外部艺术家的角色快速转译为多种商品，并通过直营线上线下网络与会员数据缩短需求反馈，而非单纯依赖盲盒概率机制。","evidenceIds":["E1","E5"],"counterEvidence":["公司未披露IP孵化成功率、单款补单周期和艺术家合同经济条款，机制效率只能间接判断。"],"confidence":"medium","status":"ready"},
+    {"id":"C4","type":"fact","text":"2025年海外业务提高毛利率的同时，库存增至54.73亿元，库存周转由102天升至123天。","evidenceIds":["E1"],"counterEvidence":["公司将库存上升解释为海外运输周期延长和全球净增109家门店备货。"],"confidence":"high","status":"ready"},
+    {"id":"C5","type":"analysis","text":"真正的护城河不是某个角色版权本身，而是发现、产品化、制造、分发和复购数据构成的闭环；其脆弱点也存在于同一闭环的创作者关系、供应商集中、库存判断和渠道治理。","evidenceIds":["E1","E5","E6"],"counterEvidence":[],"confidence":"medium","status":"ready"},
+    {"id":"C6","type":"forecast","text":"若2026年非THE MONSTERS IP增长、库存周转和海外复购同时保持健康，平台化论点将被强化；任一项持续恶化，都可能表明2025年更接近超级爆款周期。","evidenceIds":["E1","E8"],"counterEvidence":[],"confidence":"medium","status":"ready"},
+    {"id":"C7","type":"fact","text":"2026年第一季度收入仍同比增长75%—80%，但各地区增速较2025年高峰归一化，且公告未披露利润、库存和IP结构。","evidenceIds":["E4","E8"],"counterEvidence":[],"confidence":"high","status":"ready"},
+    {"id":"C8","type":"analysis","text":"泡泡玛特能否成为长期IP平台，最终取决于角色能否在热度退去后继续跨媒介、跨地区地维持消费者关系，而不是能否再次制造短期稀缺。","evidenceIds":["E1","E7","E8"],"counterEvidence":["现有披露缺少单个IP的长期复购、海外会员留存和跨媒介收入数据，尚不能验证这一结果。"],"confidence":"medium","status":"ready"}
+  ]
+}

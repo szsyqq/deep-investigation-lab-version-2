@@ -1,0 +1,74 @@
+{
+  "schemaVersion": "1.0.0",
+  "versionId": "2026-07-26T10-47-23-754Z--研究重构与版本机制建立后的基线",
+  "label": "研究重构与版本机制建立后的基线",
+  "createdAt": "2026-07-26T10:47:23.754Z",
+  "files": [
+    {
+      "path": "brief.json",
+      "sha256": "5704e63c8d604c380c250d7a470acca9b5eeaea246ca149ea7b20576c43d92a8",
+      "bytes": 2102
+    },
+    {
+      "path": "claim-map.json",
+      "sha256": "0f2b4310823ca5c495c90d8ac2ce61b3db17bb0641e0e4f1d803d4311671aa49",
+      "bytes": 3123
+    },
+    {
+      "path": "discussion.md",
+      "sha256": "b480236bbf7b649facb586f1d5bee75396fc7f21b84dd379b8680d50a3c09d61",
+      "bytes": 10921
+    },
+    {
+      "path": "draft.md",
+      "sha256": "258abe785904c405df36af1e8ee28af46fc17479af2cf9e210b224e0ba0e3d4b",
+      "bytes": 13190
+    },
+    {
+      "path": "editorial-state.json",
+      "sha256": "8a2aaf3d475f2d83c70305faf2c218ddeb6d180118144ba79d254e24c26f2e1c",
+      "bytes": 8496
+    },
+    {
+      "path": "evidence-ledger.json",
+      "sha256": "d9008863ee44dddc5e679529abe4eeae0f0ba87de67d372964b78013b4d55c93",
+      "bytes": 9136
+    },
+    {
+      "path": "outline.md",
+      "sha256": "dc2e1829ee06693cd8c4d90950f67f580d6efc42df95808bb14cad5dc0b60511",
+      "bytes": 2812
+    },
+    {
+      "path": "publication.json",
+      "sha256": "6d44591aa3778b9cac39729de9fe27f28ce6adc2ce6b8d4dc6894b117be04e64",
+      "bytes": 1726
+    },
+    {
+      "path": "research-notes.md",
+      "sha256": "3767b7b401670b7d14859287d023932cf018f6f8e97a418313ed09ec90dce9de",
+      "bytes": 9537
+    },
+    {
+      "path": "review.md",
+      "sha256": "c32a8c00bcc9cfd02660164200a02371fd8324b97b219565d86e47eea6ff9d10",
+      "bytes": 4324
+    },
+    {
+      "path": "revisions.md",
+      "sha256": "d10d5f86e3801c43b989f8eba112bfee0e50ccb452da4174e773397f14f353cb",
+      "bytes": 7140
+    },
+    {
+      "path": "visual-plan.json",
+      "sha256": "7d8b94033081c44aa5047876abc7b80099ca7839036e2514c9f8f8e4019cbe47",
+      "bytes": 2966
+    },
+    {
+      "path": "workflow-state.json",
+      "sha256": "d1c086a5434a9236ef26864146f8cdba2c5fa9031b246f2d4594cab986e79118",
+      "bytes": 4075
+    }
+  ],
+  "restorePolicy": "Only listed files are overwritten; sources, working-drafts and other versions are preserved."
+}

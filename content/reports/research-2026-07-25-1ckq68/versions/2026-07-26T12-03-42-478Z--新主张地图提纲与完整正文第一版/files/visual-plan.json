@@ -1,0 +1,30 @@
+{
+  "schemaVersion": "2.0.0",
+  "reportId": "research-2026-07-25-1ckq68",
+  "visuals": [
+    {
+      "id":"V1","claimId":"C1","pattern":"trend","component":"metric-series","title":"五年间，利润率随规模上升",
+      "readerTakeaway":"2025年不是只有收入放大，利润率也显著抬升。","evidenceIds":["E1"],
+      "data":{"unit":"人民币亿元 / %","series":[{"year":2021,"revenue":44.91,"netMargin":19.0},{"year":2022,"revenue":46.17,"netMargin":10.3},{"year":2023,"revenue":63.01,"netMargin":17.3},{"year":2024,"revenue":130.38,"netMargin":25.4},{"year":2025,"revenue":371.20,"netMargin":35.1}]},
+      "sourceNote":"泡泡玛特2025年年报财务概要；收入由人民币千元换算为亿元。","whyThisForm":"五个年度的连续变化用时间序列比正文罗列更易读。","doNotUse":["decorative-number-cards-only"]
+    },
+    {
+      "id":"V2","claimId":"C2","pattern":"distribution","component":"paired-composition-bars","title":"增长伴随三重结构迁移",
+      "readerTakeaway":"THE MONSTERS、毛绒和非中国内地收入同时提高权重。","evidenceIds":["E1"],
+      "data":{"unit":"占集团收入%","comparisons":[{"label":"THE MONSTERS","2024":23.3,"2025":38.1},{"label":"毛绒","2024":21.7,"2025":50.4},{"label":"非中国内地","2024":31.8,"2025":43.8}]},
+      "sourceNote":"泡泡玛特2025年年报；非中国内地为亚太、美洲、欧洲及其他地区之和。","whyThisForm":"三组2024/2025占比对照能直接显示集中与全球化并存。","doNotUse":["three-pie-charts"]
+    },
+    {
+      "id":"V3","claimId":"C3","pattern":"causality","component":"story-flow","title":"IP如何变成一台反馈机器",
+      "readerTakeaway":"艺术家、产品、直营渠道、会员数据与供应链形成闭环，盲盒只是其中一个工具。","evidenceIds":["E1","E5"],
+      "data":{"nodes":["艺术家IP池","跨品类产品化","直营线上线下触达","会员与销售数据","柔性补单与全球分发"],"feedback":"销售与复购信号返回IP和产品选择"},
+      "sourceNote":"基于泡泡玛特2025年年报业务模式披露的分析性归纳；因果闭环为分析框架。","whyThisForm":"核心是传导和反馈关系，不是单项指标。","doNotUse":["organization-chart","generic-funnel"]
+    },
+    {
+      "id":"V4","claimId":"C4","pattern":"contradiction","component":"paired-metric-comparison","title":"高毛利与高库存同时出现",
+      "readerTakeaway":"全球化改善毛利率，也拉长备货和周转。","evidenceIds":["E1"],
+      "data":{"2024":{"grossMargin":66.8,"inventoryRmb100m":15.25,"inventoryDays":102},"2025":{"grossMargin":72.1,"inventoryRmb100m":54.73,"inventoryDays":123}},
+      "sourceNote":"泡泡玛特2025年年报；库存由人民币百万元换算为亿元。","whyThisForm":"并置方向不同的运营指标，降低把高毛利误读为无代价增长的风险。","doNotUse":["dual-axis-line-chart"]
+    }
+  ]
+}
