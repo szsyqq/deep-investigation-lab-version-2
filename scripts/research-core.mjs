@@ -143,7 +143,9 @@ export function createPackage(root, request, forcedSlug) {
 
 建议文件名包含日期或版本号，例如 \`2026-07-26-outline-v1.md\`。视觉底稿需同时保留数据来源和编辑主张。
 `);
-  fs.mkdirSync(path.join(reportDir, "versions"), { recursive: true });
+  const versionsDir = path.join(reportDir, "versions");
+  fs.mkdirSync(versionsDir, { recursive: true });
+  fs.writeFileSync(path.join(versionsDir, ".gitkeep"), "");
   const markdownFiles = {
     "discussion.md": "# 讨论团与问题蒸馏记录\n\n> 第一轮有效资料收集后填写。每条观察标注 `verified`、`inference`、`lead` 或 `unknown`；事实与推断绑定证据编号，线索不得直接进入正文。\n\n## 读者视角\n\n## 市场或系统视角\n\n## 争议与反证视角\n\n## 核心追问（3—5个）\n\n每个追问写明：读者价值、事实张力、现有证据编号、证据缺口、反证条件和可回答状态（ready / needs-research / currently-unanswerable）。\n\n## 下一轮研究任务\n",
     "research-notes.md": "# 研究过程记录\n\n每一轮记录：新发现、来源编号、冲突、仍待回答的问题，以及是否需要进入下一轮。\n",
