@@ -107,7 +107,11 @@ export function createPackage(root, request, forcedSlug) {
   }
   const sourcesDir = path.join(reportDir, "sources");
   fs.mkdirSync(sourcesDir, { recursive: true });
-  for (const name of SOURCE_WORKPAPER_DIRS) fs.mkdirSync(path.join(sourcesDir, name), { recursive: true });
+  for (const name of SOURCE_WORKPAPER_DIRS) {
+    const directory = path.join(sourcesDir, name);
+    fs.mkdirSync(directory, { recursive: true });
+    fs.writeFileSync(path.join(directory, ".gitkeep"), "");
+  }
   fs.writeFileSync(path.join(sourcesDir, "README.md"), `# 资料底稿
 
 按证据编号保存可合法留存的一手文件、必要摘录、元数据和研究笔记。
@@ -120,7 +124,11 @@ export function createPackage(root, request, forcedSlug) {
 `);
   const workpapersDir = path.join(reportDir, "working-drafts");
   fs.mkdirSync(workpapersDir, { recursive: true });
-  for (const name of STAGE_WORKPAPER_DIRS) fs.mkdirSync(path.join(workpapersDir, name), { recursive: true });
+  for (const name of STAGE_WORKPAPER_DIRS) {
+    const directory = path.join(workpapersDir, name);
+    fs.mkdirSync(directory, { recursive: true });
+    fs.writeFileSync(path.join(directory, ".gitkeep"), "");
+  }
   fs.writeFileSync(path.join(workpapersDir, "README.md"), `# 阶段样稿
 
 按工作流阶段保存过程版本，不覆盖上一阶段。
